@@ -60,9 +60,6 @@
             background: rgba(30, 41, 59, 0.9);
             border: 1px solid rgba(51, 65, 85, 0.8);
         }
-        .badge-ia {
-            background: linear-gradient(90deg, #FF5722 0%, #9333EA 100%);
-        }
         /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
@@ -107,19 +104,16 @@
                     <a href="#programa" class="text-slate-600 hover:text-brand-orange dark:text-slate-300 dark:hover:text-brand-orange transition-colors">Programa (20 Encuentros)</a>
                     <a href="#simulador" class="text-slate-600 hover:text-brand-orange dark:text-slate-300 dark:hover:text-brand-orange transition-colors">Simulador KPI</a>
                     <a href="#equipo" class="text-slate-600 hover:text-brand-orange dark:text-slate-300 dark:hover:text-brand-orange transition-colors">Docentes</a>
+                    <a href="#inscripcion" class="text-brand-orange font-bold hover:underline">Inscripción</a>
                     <a href="#faq" class="text-slate-600 hover:text-brand-orange dark:text-slate-300 dark:hover:text-brand-orange transition-colors">FAQ</a>
                 </div>
 
                 <!-- CTA Action Button -->
                 <div class="flex items-center gap-3">
-                    <button onclick="openModal('Inscripción')" class="bg-brand-orange hover:bg-brand-orangeHover text-white font-bold px-5 py-2.5 rounded-xl text-sm shadow-md shadow-brand-orange/20 transition-all hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2">
-                        <span>Consultar Cupos</span>
-                        <i class="fa-solid fa-arrow-right text-xs"></i>
-                    <button onclick="openModal('Consultar Cupos')" class="bg-brand-orange hover:bg-brand-orangeHover text-white font-bold px-5 py-2.5 rounded-xl text-sm shadow-md shadow-brand-orange/20 transition-all hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer">
-                    <i class="fa-brands fa-whatsapp text-base"></i>
-                    <span>Consultar Cupos</span>
-                    </button>
-                    </button>
+                    <a href="#inscripcion" class="bg-brand-orange hover:bg-brand-orangeHover text-white font-bold px-5 py-2.5 rounded-xl text-sm shadow-md shadow-brand-orange/20 transition-all hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer">
+                        <i class="fa-solid fa-file-pen"></i>
+                        <span>Inscribirme</span>
+                    </a>
                     <!-- Mobile Hamburger -->
                     <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 dark:text-slate-300 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
                         <i class="fa-solid fa-bars text-xl"></i>
@@ -135,6 +129,7 @@
             <a href="#programa" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 dark:text-slate-300 font-medium">Programa Completo</a>
             <a href="#simulador" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 dark:text-slate-300 font-medium">Simulador BSC</a>
             <a href="#equipo" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 dark:text-slate-300 font-medium">Equipo Docente</a>
+            <a href="#inscripcion" onclick="toggleMobileMenu()" class="block py-2 text-brand-orange font-bold">Formulario de Inscripción</a>
             <a href="#faq" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 dark:text-slate-300 font-medium">Preguntas Frecuentes</a>
         </div>
     </nav>
@@ -181,13 +176,13 @@
 
                     <!-- Call To Action Buttons -->
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                        <a href="https://wa.me/5493516573170?text=Hola%20Jorge,%20quiero%20inscribirme%20y%20recibir%20informaci%C3%B3n%20sobre%20la%20Diplomatura%20en%20Direcci%C3%B3n%20de%20Empresas" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white font-extrabold px-8 py-4 rounded-xl text-base shadow-xl shadow-brand-orange/25 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3">
-                            <i class="fa-brands fa-whatsapp text-xl"></i>
-                            <span>Inscribirme Ahora</span>
+                        <a href="#inscripcion" class="w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white font-extrabold px-8 py-4 rounded-xl text-base shadow-xl shadow-brand-orange/25 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-file-signature text-xl"></i>
+                            <span>Ir al Formulario de Inscripción</span>
                         </a>
                         <button onclick="openModal('Inscripción Inmediata')" class="w-full sm:w-auto border border-slate-700 hover:border-slate-500 bg-slate-800/60 text-slate-200 font-semibold px-6 py-4 rounded-xl text-base hover:bg-slate-800 transition-all text-center flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-address-card text-brand-orange"></i>
-                            <span>Contactar Asesor</span>
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+                            <span>Consultar Asesor</span>
                         </button>
                     </div>
                 </div>
@@ -669,67 +664,274 @@
         </div>
     </section>
 
+    <!-- REGISTRATION FORM SECTION -->
+    <section id="inscripcion" class="py-20 bg-slate-100 dark:bg-slate-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+                <span class="bg-brand-orange/10 text-brand-orange border border-brand-orange/20 text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-wider">
+                    Inscripciones Abiertas
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white">
+                    Formulario Oficial de Inscripción
+                </h2>
+                <p class="text-slate-600 dark:text-slate-300 text-base">
+                    Completá tus datos personales y elegí tu modalidad de pago. Tu solicitud será enviada directamente por WhatsApp al equipo de Admisiones Académicas para formalizar tu vacante.
+                </p>
+            </div>
+
+            <!-- Main Form Wrapper Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start max-w-6xl mx-auto">
+                
+                <!-- Left Column: Pricing Summary & Card Options -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-xl space-y-6">
+                        <div class="border-b border-slate-100 dark:border-slate-700 pb-4">
+                            <span class="text-xs font-extrabold uppercase text-brand-orange tracking-wider">Inversión y Financiación</span>
+                            <h3 class="text-xl font-extrabold font-heading text-slate-900 dark:text-white mt-1">Opciones Disponibles</h3>
+                        </div>
+
+                        <!-- Payment Plan 1 Card -->
+                        <div class="p-5 rounded-2xl bg-gradient-to-br from-orange-50 to-amber-50/50 border-2 border-brand-orange/40 hover:border-brand-orange transition-all relative overflow-hidden">
+                            <span class="absolute top-0 right-0 bg-brand-orange text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-xl tracking-wider">
+                                BECA 30% OFF + 100% Bonificado
+                            </span>
+                            <div class="flex items-center gap-2 mb-2 pt-2">
+                                <i class="fa-solid fa-bolt-lightning text-brand-orange text-lg"></i>
+                                <span class="text-xs font-extrabold text-slate-800 dark:text-slate-900 uppercase">Opción 1: Pago Único</span>
+                            </div>
+                            <p class="text-2xl font-extrabold text-slate-900 font-heading">$ 675.484.-</p>
+                            <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                                Transf. bancaria directa. Incluye Beca 30% OFF y matrícula de inscripción 100% bonificada.
+                            </p>
+                        </div>
+
+                        <!-- Payment Plan 2 Card -->
+                        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700 hover:border-purple-500 transition-all">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fa-solid fa-credit-card text-brand-purple text-lg"></i>
+                                <span class="text-xs font-extrabold text-slate-800 dark:text-slate-200 uppercase">Opción 2: Tarjeta de Crédito</span>
+                            </div>
+                            <p class="text-2xl font-extrabold text-slate-900 dark:text-white font-heading">12 cuotas sin interés</p>
+                            <p class="text-lg font-bold text-brand-purple dark:text-purple-400 mt-0.5">$ 91.749.- / cuota</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                                Financiación en 12 cuotas fijas sin interés con tarjeta de crédito bancaria.
+                            </p>
+                        </div>
+
+                        <!-- Inquire Other Credit Card Options CTA -->
+                        <div class="p-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800/50 space-y-2">
+                            <div class="flex items-center gap-2 text-emerald-800 dark:text-emerald-300 font-bold text-xs">
+                                <i class="fa-brands fa-whatsapp text-emerald-600 text-lg"></i>
+                                <span>¿Tenés dudas sobre otras tarjetas de crédito?</span>
+                            </div>
+                            <p class="text-xs text-slate-600 dark:text-slate-300">
+                                Consultá con nuestro asesor por promociones bancarias, planes especiales de cuotas o financiación corporativa.
+                            </p>
+                            <a href="https://wa.me/5493516573170?text=Hola%20Jorge,%20quisiera%20consultar%20por%20otras%20opciones%20de%20pago%20con%20tarjeta%20de%20cr%C3%A9dito%20para%20la%20Diplomatura%20en%20Direcci%C3%B3n%20de%20Empresas" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-extrabold text-emerald-700 dark:text-emerald-400 hover:underline pt-1">
+                                <span>Enviar mensaje por consultas de pago</span>
+                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Enrollment Form -->
+                <div class="lg:col-span-7">
+                    <form id="inscripcionForm" onsubmit="sendInscripcionWhatsApp(event)" class="bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-xl space-y-5">
+                        
+                        <div class="border-b border-slate-100 dark:border-slate-700 pb-3 flex items-center justify-between">
+                            <div>
+                                <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white">Datos del Postulante</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">Ingresá tus datos tal cual figuran en tu documento nacional de identidad.</p>
+                            </div>
+                            <i class="fa-solid fa-user-check text-brand-orange text-2xl"></i>
+                        </div>
+
+                        <!-- Field: Nombre y Apellido -->
+                        <div>
+                            <label for="nombreApellido" class="block text-xs font-extrabold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                                Nombre y Apellido <span class="text-rose-500">*</span>
+                            </label>
+                            <div class="relative">
+                                <i class="fa-solid fa-user absolute left-3.5 top-3 text-slate-400 text-sm"></i>
+                                <input type="text" id="nombreApellido" required placeholder="Ej: Juan Carlos Pérez" class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-slate-800 dark:text-white text-sm focus:ring-2 focus:ring-brand-orange focus:outline-none transition-all">
+                            </div>
+                        </div>
+
+                        <!-- Field Grid: Documento & Teléfono -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <!-- Nro. de Documento -->
+                            <div>
+                                <label for="nroDocumento" class="block text-xs font-extrabold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                                    Nro. de Documento (DNI/Pasaporte) <span class="text-rose-500">*</span>
+                                </label>
+                                <div class="relative">
+                                    <i class="fa-solid fa-id-card absolute left-3.5 top-3 text-slate-400 text-sm"></i>
+                                    <input type="text" id="nroDocumento" required placeholder="Ej: 32849102" class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-slate-800 dark:text-white text-sm focus:ring-2 focus:ring-brand-orange focus:outline-none transition-all">
+                                </div>
+                            </div>
+
+                            <!-- Teléfono -->
+                            <div>
+                                <label for="telefono" class="block text-xs font-extrabold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                                    Teléfono / WhatsApp <span class="text-rose-500">*</span>
+                                </label>
+                                <div class="relative">
+                                    <i class="fa-solid fa-phone absolute left-3.5 top-3 text-slate-400 text-sm"></i>
+                                    <input type="tel" id="telefono" required placeholder="Ej: +54 9 351 1234567" class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-slate-800 dark:text-white text-sm focus:ring-2 focus:ring-brand-orange focus:outline-none transition-all">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Field: Correo Electrónico -->
+                        <div>
+                            <label for="correo" class="block text-xs font-extrabold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                                Correo Electrónico <span class="text-rose-500">*</span>
+                            </label>
+                            <div class="relative">
+                                <i class="fa-solid fa-envelope absolute left-3.5 top-3 text-slate-400 text-sm"></i>
+                                <input type="email" id="correo" required placeholder="tuemail@dominio.com" class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-slate-800 dark:text-white text-sm focus:ring-2 focus:ring-brand-orange focus:outline-none transition-all">
+                            </div>
+                        </div>
+
+                        <!-- Field: Opción de Pago Elegida -->
+                        <div>
+                            <label for="opcionPago" class="block text-xs font-extrabold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                                Opción de Pago Elegida <span class="text-rose-500">*</span>
+                            </label>
+                            <div class="relative">
+                                <i class="fa-solid fa-wallet absolute left-3.5 top-3 text-slate-400 text-sm z-10"></i>
+                                <select id="opcionPago" required class="w-full pl-10 pr-10 py-3 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-slate-800 dark:text-white text-xs sm:text-sm focus:ring-2 focus:ring-brand-orange focus:outline-none appearance-none cursor-pointer transition-all leading-tight">
+                                    <option value="" disabled selected>Seleccioná tu modalidad de pago...</option>
+                                    <option value="1) Pago único por transferencia de $ 675.484.- (BECA 30%OFF + matrícula 100% bonificada)">
+                                        1) Pago único por transferencia de $ 675.484.- (BECA 30%OFF + matrícula 100% bonificada)
+                                    </option>
+                                    <option value="2) 12 cuotas sin interés de $ 91.749.- con tarjeta de crédito">
+                                        2) 12 cuotas sin interés de $ 91.749.- con tarjeta de crédito
+                                    </option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down absolute right-3.5 top-3.5 text-slate-400 text-xs pointer-events-none"></i>
+                            </div>
+                        </div>
+
+                        <!-- Field: Factura (A, B o C) -->
+                        <div>
+                            <label for="tipoFactura" class="block text-xs font-extrabold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                                Tipo de Factura requerida <span class="text-rose-500">*</span>
+                            </label>
+                            <div class="relative">
+                                <i class="fa-solid fa-receipt absolute left-3.5 top-3 text-slate-400 text-sm z-10"></i>
+                                <select id="tipoFactura" onchange="toggleFacturaFields()" required class="w-full pl-10 pr-10 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-slate-800 dark:text-white text-sm focus:ring-2 focus:ring-brand-orange focus:outline-none appearance-none cursor-pointer transition-all">
+                                    <option value="" disabled selected>Seleccioná el tipo de comprobante...</option>
+                                    <option value="Factura Tipo A">Factura Tipo A (Empresa / Responsable Inscripto)</option>
+                                    <option value="Factura Tipo B">Factura Tipo B (Consumidor Final / Exento)</option>
+                                    <option value="Factura Tipo C">Factura Tipo C (Consumidor Final)</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down absolute right-3.5 top-3.5 text-slate-400 text-xs pointer-events-none"></i>
+                            </div>
+                        </div>
+
+                        <!-- Dynamic Info Box for Factura A -->
+                        <div id="campoFacturaA" class="hidden p-4 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-700 space-y-3 transition-all">
+                            <div class="flex items-center gap-2 text-amber-800 dark:text-amber-300 text-xs font-bold">
+                                <i class="fa-solid fa-building text-amber-600 text-sm"></i>
+                                <span>Información Impositiva requerida para Factura Tipo "A":</span>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">CUIT de la Empresa</label>
+                                    <input type="text" id="cuitFacturaA" placeholder="Ej: 30-71123456-8" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-xs text-slate-800 dark:text-white focus:ring-2 focus:ring-brand-orange focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Razón Social</label>
+                                    <input type="text" id="razonSocialFacturaA" placeholder="Ej: Empresa S.A." class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-xs text-slate-800 dark:text-white focus:ring-2 focus:ring-brand-orange focus:outline-none">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Condición Frente al IVA / Notas Fiscales</label>
+                                <input type="text" id="condicionIvaA" placeholder="Ej: Responsable Inscripto / Domicilio Fiscal" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-xs text-slate-800 dark:text-white focus:ring-2 focus:ring-brand-orange focus:outline-none">
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="pt-2">
+                            <button type="submit" class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white font-extrabold py-4 px-6 rounded-xl text-base shadow-lg shadow-brand-orange/30 hover:shadow-xl transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-3">
+                                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                                <span>Enviar Inscripción por WhatsApp</span>
+                            </button>
+                            <p class="text-[11px] text-center text-slate-500 dark:text-slate-400 mt-2">
+                                Al hacer clic, se abrirá tu aplicación de WhatsApp con todos los datos precargados para que los envíes directamente a Jorge De Angeli (Admisiones Mundos E / UNC).
+                            </p>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ SECTION -->
-    <section id="faq" class="py-20 bg-slate-50">
+    <section id="faq" class="py-20 bg-slate-50 dark:bg-slate-900/60">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 space-y-2">
                 <span class="text-brand-orange font-extrabold uppercase tracking-widest text-xs">Resolvé tus dudas</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900">Preguntas Frecuentes</h2>
+                <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white">Preguntas Frecuentes</h2>
             </div>
 
             <div class="space-y-4" id="faqAccordion">
                 <!-- FAQ Item 1 -->
-                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
-                    <button onclick="toggleFAQ(1)" class="w-full text-left px-6 py-5 flex justify-between items-center font-bold text-slate-900 hover:text-brand-orange transition-colors">
+                <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
+                    <button onclick="toggleFAQ(1)" class="w-full text-left px-6 py-5 flex justify-between items-center font-bold text-slate-900 dark:text-white hover:text-brand-orange transition-colors">
                         <span>¿Cómo puedo inscribirme?</span>
                         <i id="faq-icon-1" class="fa-solid fa-chevron-down text-brand-orange transition-transform"></i>
                     </button>
-                    <div id="faq-answer-1" class="hidden px-6 pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-3">
-                        Hacé clic en cualquiera de los botones de "Consultar" o "Inscribirme", completá el formulario de contacto y un Asesor Educativo se comunicará con vos para guiarte en el proceso de matriculación y reservas de cupo.
+                    <div id="faq-answer-1" class="hidden px-6 pb-5 text-slate-600 dark:text-slate-300 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700/60 pt-3">
+                        Completá el <a href="#inscripcion" class="text-brand-orange font-bold underline">Formulario de Inscripción</a> ubicado arriba o comunicate directamente por WhatsApp. Un Asesor Educativo te confirmará la reserva de tu cupo y los pasos para el pago.
                     </div>
                 </div>
 
                 <!-- FAQ Item 2 -->
-                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
-                    <button onclick="toggleFAQ(2)" class="w-full text-left px-6 py-5 flex justify-between items-center font-bold text-slate-900 hover:text-brand-orange transition-colors">
+                <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
+                    <button onclick="toggleFAQ(2)" class="w-full text-left px-6 py-5 flex justify-between items-center font-bold text-slate-900 dark:text-white hover:text-brand-orange transition-colors">
                         <span>¿Cómo se cursa este programa?</span>
                         <i id="faq-icon-2" class="fa-solid fa-chevron-down text-brand-orange transition-transform"></i>
                     </button>
-                    <div id="faq-answer-2" class="hidden px-6 pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-3">
+                    <div id="faq-answer-2" class="hidden px-6 pb-5 text-slate-600 dark:text-slate-300 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700/60 pt-3">
                         Los encuentros son 100% online y en vivo, con frecuencia semanal (20 encuentros totales). Además tenés acceso 24/7 a la plataforma con materiales y ejercicios extra. Es necesario contar con al menos el 80% de asistencia para recibir el certificado.
                     </div>
                 </div>
 
                 <!-- FAQ Item 3 -->
-                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
-                    <button onclick="toggleFAQ(3)" class="w-full text-left px-6 py-5 flex justify-between items-center font-bold text-slate-900 hover:text-brand-orange transition-colors">
+                <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
+                    <button onclick="toggleFAQ(3)" class="w-full text-left px-6 py-5 flex justify-between items-center font-bold text-slate-900 dark:text-white hover:text-brand-orange transition-colors">
                         <span>¿Quién certifica este programa?</span>
                         <i id="faq-icon-3" class="fa-solid fa-chevron-down text-brand-orange transition-transform"></i>
                     </button>
-                    <div id="faq-answer-3" class="hidden px-6 pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-3">
+                    <div id="faq-answer-3" class="hidden px-6 pb-5 text-slate-600 dark:text-slate-300 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700/60 pt-3">
                         Nuestros programas tienen certificación oficial otorgada conjuntamente por la Facultad de Ciencias Exactas, Físicas y Naturales (FCEFyN) de la Universidad Nacional de Córdoba (UNC, Argentina) y la Escuela de Negocios Mundos E.
                     </div>
                 </div>
 
                 <!-- FAQ Item 4 -->
-                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
-                    <button onclick="toggleFAQ(4)" class="w-full text-left px-6 py-5 flex justify-between items-center font-bold text-slate-900 hover:text-brand-orange transition-colors">
+                <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
+                    <button onclick="toggleFAQ(4)" class="w-full text-left px-6 py-5 flex justify-between items-center font-bold text-slate-900 dark:text-white hover:text-brand-orange transition-colors">
                         <span>¿Cómo y cuándo obtengo mi certificado?</span>
                         <i id="faq-icon-4" class="fa-solid fa-chevron-down text-brand-orange transition-transform"></i>
                     </button>
-                    <div id="faq-answer-4" class="hidden px-6 pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-3">
+                    <div id="faq-answer-4" class="hidden px-6 pb-5 text-slate-600 dark:text-slate-300 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700/60 pt-3">
                         La entrega se realiza en el marco de nuestros actos institucionales de colación, programados tres veces al año (Abril, Julio y Noviembre). Recibirás tu diploma impreso o digital según la fecha de finalización del programa.
                     </div>
                 </div>
 
                 <!-- FAQ Item 5 -->
-                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
-                    <button onclick="toggleFAQ(5)" class="w-full text-left px-6 py-5 flex justify-between items-center font-bold text-slate-900 hover:text-brand-orange transition-colors">
+                <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
+                    <button onclick="toggleFAQ(5)" class="w-full text-left px-6 py-5 flex justify-between items-center font-bold text-slate-900 dark:text-white hover:text-brand-orange transition-colors">
                         <span>¿Qué opciones de pago y financiación existen?</span>
                         <i id="faq-icon-5" class="fa-solid fa-chevron-down text-brand-orange transition-transform"></i>
                     </button>
-                    <div id="faq-answer-5" class="hidden px-6 pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-3">
-                        Ofrecemos diferentes opciones de pago en cuotas, tarjetas de crédito, transferencias y bonificaciones especiales para inscripciones anticipadas o grupos corporativos.
+                    <div id="faq-answer-5" class="hidden px-6 pb-5 text-slate-600 dark:text-slate-300 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700/60 pt-3">
+                        Contás con opción de pago único por transferencia de $675.484.- con BECA 30%OFF y matrícula 100% bonificada, o bien 12 cuotas sin interés de $91.749.- con tarjeta de crédito. También pods solicitar otras alternativas bancarias.
                     </div>
                 </div>
             </div>
@@ -746,9 +948,13 @@
                 Sumate a la nueva cohorte de la Diplomatura Universitaria en Dirección de Empresas. Cupos limitados para garantizar una experiencia personalizada.
             </p>
             <div class="pt-4 flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://wa.me/5493516573170?text=Hola%20Jorge,%20quisiera%20consultar%20por%20la%20Diplomatura%20en%20Direcci%C3%B3n%20de%20Empresas" target="_blank" rel="noopener noreferrer" class="bg-slate-900 hover:bg-slate-800 text-white font-extrabold px-8 py-4 rounded-xl text-base shadow-2xl transition-all hover:-translate-y-0.5 inline-flex items-center justify-center gap-3">
+                <a href="#inscripcion" class="bg-slate-900 hover:bg-slate-800 text-white font-extrabold px-8 py-4 rounded-xl text-base shadow-2xl transition-all hover:-translate-y-0.5 inline-flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-file-pen text-brand-orange text-xl"></i>
+                    <span>Completar Formulario de Inscripción</span>
+                </a>
+                <a href="https://wa.me/5493516573170?text=Hola%20Jorge,%20quisiera%20consultar%20por%20la%20Diplomatura%20en%20Direcci%C3%B3n%20de%20Empresas" target="_blank" rel="noopener noreferrer" class="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold px-8 py-4 rounded-xl text-base transition-all inline-flex items-center justify-center gap-3">
                     <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i>
-                    <span>Contactar a Jorge De Angeli por WhatsApp</span>
+                    <span>Contactar a Jorge De Angeli</span>
                 </a>
             </div>
         </div>
@@ -774,6 +980,7 @@
                         <li><a href="#programa" class="hover:text-brand-orange">Programa Completo</a></li>
                         <li><a href="#simulador" class="hover:text-brand-orange">Simulador BSC</a></li>
                         <li><a href="#equipo" class="hover:text-brand-orange">Equipo Docente</a></li>
+                        <li><a href="#inscripcion" class="hover:text-brand-orange">Formulario de Inscripción</a></li>
                     </ul>
                 </div>
                 <div>
@@ -805,9 +1012,9 @@
 
     <!-- MODAL DE CONSULTA / INSCRIPCIÓN -->
     <div id="modalConsultar" class="fixed inset-0 z-50 hidden bg-slate-900/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative border border-slate-200">
+        <div class="bg-white dark:bg-slate-800 rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative border border-slate-200 dark:border-slate-700">
             <!-- Close Button -->
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-2 text-xl">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-2 text-xl">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
@@ -817,7 +1024,7 @@
                     <i class="fa-solid fa-user-tie"></i>
                 </div>
                 <div>
-                    <h4 class="text-lg font-bold font-heading">Jorge De Angeli</h4>
+                    <h4 class="text-lg font-bold font-heading" id="modalTitle">Jorge De Angeli</h4>
                     <p class="text-xs text-brand-orange font-medium">Asesor Educativo y Admisiones Académicas</p>
                     <p class="text-[11px] text-slate-400">Mundos E | Universidad Nacional de Córdoba</p>
                 </div>
@@ -825,63 +1032,89 @@
 
             <div class="space-y-3 mb-6">
                 <!-- Direct WhatsApp button -->
-                <a href="https://wa.me/5493516573170?text=Hola%20Jorge,%20quiero%20más%20información%20sobre%20la%20Diplomatura%20en%20Dirección%20de%20Empresas" target="_blank" rel="noopener noreferrer" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-4 rounded-xl text-sm shadow-md transition-all flex items-center justify-center gap-2">
+                <a href="https://wa.me/5493516573170?text=Hola%20Jorge,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20Diplomatura%20en%20Direcci%C3%B3n%20de%20Empresas" target="_blank" rel="noopener noreferrer" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-4 rounded-xl text-sm shadow-md transition-all flex items-center justify-center gap-2">
                     <i class="fa-brands fa-whatsapp text-lg"></i>
                     <span>Escribir directamente por WhatsApp (+54 9 351 657-3170)</span>
                 </a>
 
                 <!-- LinkedIn and Web Links -->
                 <div class="grid grid-cols-2 gap-2 text-xs">
-                    <a href="https://www.linkedin.com/in/jorgedeangeli/" target="_blank" rel="noopener noreferrer" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold p-2.5 rounded-lg text-center flex items-center justify-center gap-2">
+                    <a href="https://www.linkedin.com/in/jorgedeangeli/" target="_blank" rel="noopener noreferrer" class="bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 text-slate-700 dark:text-slate-200 font-semibold p-2.5 rounded-lg text-center flex items-center justify-center gap-2">
                         <i class="fa-brands fa-linkedin text-sky-600 text-base"></i>
                         <span>Perfil LinkedIn</span>
                     </a>
-                    <a href="https://www.mundose.com" target="_blank" rel="noopener noreferrer" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold p-2.5 rounded-lg text-center flex items-center justify-center gap-2">
+                    <a href="https://www.mundose.com" target="_blank" rel="noopener noreferrer" class="bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 text-slate-700 dark:text-slate-200 font-semibold p-2.5 rounded-lg text-center flex items-center justify-center gap-2">
                         <i class="fa-solid fa-globe text-brand-orange text-base"></i>
                         <span>www.mundose.com</span>
                     </a>
                 </div>
             </div>
 
-            <div class="relative flex py-2 items-center">
-                <div class="flex-grow border-t border-slate-200"></div>
-                <span class="flex-shrink mx-3 text-slate-400 text-xs font-semibold uppercase">O dejá tu mensaje</span>
-                <div class="flex-grow border-t border-slate-200"></div>
-            </div>
-
-            <form id="leadForm" onsubmit="handleFormSubmit(event)" class="space-y-3 mt-2">
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nombre Completo</label>
-                    <input type="text" required placeholder="Ej: Maria González" class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-orange focus:outline-none">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Correo Electrónico</label>
-                    <input type="email" required placeholder="tuemail@empresa.com" class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-orange focus:outline-none">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Teléfono / WhatsApp</label>
-                    <input type="tel" required placeholder="+54 9 351..." class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-orange focus:outline-none">
-                </div>
-
-                <div class="pt-2">
-                    <button type="submit" class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white font-bold py-3 rounded-xl text-sm shadow-md transition-all">
-                        Enviar Consulta
-                    </button>
-                </div>
-            </form>
-
-            <div id="modalSuccess" class="hidden text-center py-6 space-y-3">
-                <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-2xl mx-auto">
-                    <i class="fa-solid fa-check"></i>
-                </div>
-                <h4 class="text-lg font-bold text-slate-900">¡Consulta Registrada!</h4>
-                <p class="text-xs text-slate-600">Jorge De Angeli se pondrá en contacto a la brevedad con vos.</p>
-                <button onclick="closeModal()" class="bg-slate-100 text-slate-700 font-bold px-6 py-2 rounded-xl text-xs">Cerrar</button>
+            <div class="text-center">
+                <a href="#inscripcion" onclick="closeModal()" class="inline-block bg-brand-orange hover:bg-brand-orangeHover text-white font-bold px-6 py-2.5 rounded-xl text-xs shadow-md transition-all">
+                    Ir al Formulario de Inscripción en la página &rarr;
+                </a>
             </div>
         </div>
     </div>
 
     <script>
+        // Toggle dynamic fields for Factura Tipo A
+        function toggleFacturaFields() {
+            const tipo = document.getElementById('tipoFactura').value;
+            const campoA = document.getElementById('campoFacturaA');
+            if (tipo === 'Factura Tipo A') {
+                campoA.classList.remove('hidden');
+            } else {
+                campoA.classList.add('hidden');
+            }
+        }
+
+        // Handle sending registration data via WhatsApp
+        function sendInscripcionWhatsApp(event) {
+            event.preventDefault();
+
+            const nombre = document.getElementById('nombreApellido').value.trim();
+            const dni = document.getElementById('nroDocumento').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            const correo = document.getElementById('correo').value.trim();
+            const pago = document.getElementById('opcionPago').value;
+            const factura = document.getElementById('tipoFactura').value;
+
+            let mensajeFacturaInfo = `• Factura requerida: ${factura}`;
+
+            if (factura === 'Factura Tipo A') {
+                const cuit = document.getElementById('cuitFacturaA').value.trim();
+                const razonSocial = document.getElementById('razonSocialFacturaA').value.trim();
+                const condicionIva = document.getElementById('condicionIvaA').value.trim();
+
+                mensajeFacturaInfo += `\n  - CUIT: ${cuit || 'No especificado'}`;
+                mensajeFacturaInfo += `\n  - Razón Social: ${razonSocial || 'No especificada'}`;
+                mensajeFacturaInfo += `\n  - Condición IVA / Fiscal: ${condicionIva || 'No especificada'}`;
+            }
+
+            // Build structured text for WhatsApp
+            const textoMensaje = `Quiero inscribirme en la Diplomatura Universitaria en Dirección de Empresas
+
+📌 *DATOS DEL INSCRIPTO:*
+• Nombre y Apellido: ${nombre}
+• Nro. de Documento: ${dni}
+• Teléfono: ${telefono}
+• Correo Electrónico: ${correo}
+
+💳 *OPCIÓN DE PAGO ELEGIDA:*
+• ${pago}
+
+🧾 *FACTURACIÓN:*
+${mensajeFacturaInfo}`;
+
+            // Encode string for WhatsApp web/app URL
+            const whatsappUrl = `https://wa.me/5493516573170?text=${encodeURIComponent(textoMensaje)}`;
+
+            // Open WhatsApp in new tab
+            window.open(whatsappUrl, '_blank');
+        }
+
         // Data Structure for Modules & Encounters
         const modulesData = [
             {
@@ -1152,7 +1385,7 @@
             const container = document.getElementById('moduleContent');
             let results = [];
 
-            modulesData.forEach((mod, modIdx) => {
+            modulesData.forEach((mod) => {
                 mod.encounters.forEach(enc => {
                     const matchTitle = enc.title.toLowerCase().includes(query);
                     const matchTopics = enc.topics.some(t => t.toLowerCase().includes(query));
@@ -1242,21 +1475,13 @@
             const modal = document.getElementById('modalConsultar');
             const title = document.getElementById('modalTitle');
             if (origin) {
-                title.innerText = `Solicitar Información (${origin})`;
+                title.innerText = `Jorge De Angeli (${origin})`;
             }
             modal.classList.remove('hidden');
         }
 
         function closeModal() {
             document.getElementById('modalConsultar').classList.add('hidden');
-            document.getElementById('leadForm').classList.remove('hidden');
-            document.getElementById('modalSuccess').classList.add('hidden');
-        }
-
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            document.getElementById('leadForm').classList.add('hidden');
-            document.getElementById('modalSuccess').classList.remove('hidden');
         }
 
         // Mobile Menu Toggle
