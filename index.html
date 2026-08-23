@@ -1,1502 +1,224 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diplomatura Universitaria en Dirección de Empresas | Micro MBA con IA - Mundos E & UNC</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Dirección de Empresas - MundosE & UNC FCEFyN</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            orange: '#FF5722',
-                            orangeHover: '#E64A19',
-                            purple: '#5B21B6',
-                            purpleLight: '#7C3AED',
-                            dark: '#0F172A',
-                            accent: '#10B981',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Plus Jakarta Sans', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .gradient-text {
-            background: linear-gradient(135deg, #FF5722 0%, #7C3AED 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .gradient-bg {
-            background: linear-gradient(135deg, #FF5722 0%, #6366F1 100%);
-        }
-        .hero-pattern {
-            background-color: #0F172A;
-            background-image: radial-gradient(rgba(255, 87, 34, 0.15) 1px, transparent 0), radial-gradient(rgba(124, 58, 237, 0.15) 1px, #0F172A 0);
-            background-size: 40px 40px;
-            background-position: 0 0, 20px 20px;
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(229, 231, 235, 0.8);
-        }
-        .dark .glass-card {
-            background: rgba(30, 41, 59, 0.9);
-            border: 1px solid rgba(51, 65, 85, 0.8);
-        }
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #c5c5c5;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #FF5722;
-        }
-    </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-orange selection:text-white transition-colors duration-300">
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between">
 
-    <!-- NAVIGATION BAR -->
-    <nav class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <!-- Logos -->
-                <div class="flex items-center space-x-4">
-                    <a href="#" class="flex items-center gap-2 group">
-                        <div class="bg-brand-orange text-white font-extrabold px-3 py-1.5 rounded-lg text-lg tracking-wider group-hover:scale-105 transition-transform">
-                            mundos E
-                        </div>
-                        <span class="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-widest hidden sm:inline-block">+</span>
-                        <div class="hidden sm:flex flex-col text-left text-xs font-bold leading-tight text-slate-700 dark:text-slate-300">
-                            <span>UNC</span>
-                            <span class="text-[10px] text-slate-500 dark:text-slate-400 font-normal">FCEFyN</span>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Desktop Menu Nav Links -->
-                <div class="hidden md:flex items-center space-x-6 text-sm font-semibold">
-                    <a href="#inicio" class="text-slate-600 hover:text-brand-orange dark:text-slate-300 dark:hover:text-brand-orange transition-colors">Inicio</a>
-                    <a href="#beneficios" class="text-slate-600 hover:text-brand-orange dark:text-slate-300 dark:hover:text-brand-orange transition-colors">Beneficios</a>
-                    <a href="#programa" class="text-slate-600 hover:text-brand-orange dark:text-slate-300 dark:hover:text-brand-orange transition-colors">Programa (20 Encuentros)</a>
-                    <a href="#simulador" class="text-slate-600 hover:text-brand-orange dark:text-slate-300 dark:hover:text-brand-orange transition-colors">Simulador KPI</a>
-                    <a href="#equipo" class="text-slate-600 hover:text-brand-orange dark:text-slate-300 dark:hover:text-brand-orange transition-colors">Docentes</a>
-                    <a href="#inscripcion" class="text-brand-orange font-bold hover:underline">Inscripción</a>
-                    <a href="#faq" class="text-slate-600 hover:text-brand-orange dark:text-slate-300 dark:hover:text-brand-orange transition-colors">FAQ</a>
-                </div>
-
-                <!-- CTA Action Button -->
-                <div class="flex items-center gap-3">
-                    <a href="#inscripcion" class="bg-brand-orange hover:bg-brand-orangeHover text-white font-bold px-5 py-2.5 rounded-xl text-sm shadow-md shadow-brand-orange/20 transition-all hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer">
-                        <i class="fa-solid fa-file-pen"></i>
-                        <span>Inscribirme</span>
-                    </a>
-                    <!-- Mobile Hamburger -->
-                    <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 dark:text-slate-300 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
-                        <i class="fa-solid fa-bars text-xl"></i>
-                    </button>
-                </div>
+    <!-- Navegación -->
+    <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="font-bold text-xl tracking-tight text-indigo-400">mundosE | UNC FCEFyN</div>
+            <div class="space-x-6 hidden md:block text-sm font-medium">
+                <a href="#programa" class="hover:text-indigo-400 transition">El Programa</a>
+                <a href="#detalles" class="hover:text-indigo-400 transition">Cursado</a>
+                <a href="#inversion" class="hover:text-indigo-400 transition">Inversión</a>
+                <a href="#inscripcion" class="hover:text-indigo-400 transition">Inscripción</a>
+                <a href="#contacto" class="hover:text-indigo-400 transition">Contacto</a>
             </div>
-        </div>
-
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pt-2 pb-4 space-y-2">
-            <a href="#inicio" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 dark:text-slate-300 font-medium">Inicio</a>
-            <a href="#beneficios" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 dark:text-slate-300 font-medium">Beneficios</a>
-            <a href="#programa" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 dark:text-slate-300 font-medium">Programa Completo</a>
-            <a href="#simulador" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 dark:text-slate-300 font-medium">Simulador BSC</a>
-            <a href="#equipo" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 dark:text-slate-300 font-medium">Equipo Docente</a>
-            <a href="#inscripcion" onclick="toggleMobileMenu()" class="block py-2 text-brand-orange font-bold">Formulario de Inscripción</a>
-            <a href="#faq" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 dark:text-slate-300 font-medium">Preguntas Frecuentes</a>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section id="inicio" class="hero-pattern text-white relative overflow-hidden py-16 lg:py-24">
-        <!-- Background Decorative Glows -->
-        <div class="absolute -top-24 -left-24 w-96 h-96 bg-brand-orange/20 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute top-1/2 -right-24 w-96 h-96 bg-brand-purple/30 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <!-- Left Hero Text Content -->
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-slate-200 text-xs font-semibold uppercase tracking-wider">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                        Diplomatura Universitaria
-                        <span class="text-slate-500">|</span>
-                        <span class="text-brand-orange font-bold">Micro MBA con IA</span>
-                    </div>
-
-                    <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
-                        Diplomatura Universitaria en <span class="gradient-text">Dirección de Empresas</span>
-                    </h1>
-
-                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
-                        Un programa de última generación dirigido a Gerentes y Mandos Medios que quieren potenciar los resultados de su gestión. Generá equipos más potentes, innová en procesos y alcanzá metas sostenibles utilizando Inteligencia Artificial.
-                    </p>
-
-                    <!-- Institution Certification Tag -->
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 py-2">
-                        <div class="flex items-center gap-3 bg-slate-800/90 border border-slate-700/80 px-4 py-2.5 rounded-xl shadow-inner">
-                            <i class="fa-solid fa-graduation-cap text-2xl text-brand-orange"></i>
-                            <div class="text-left">
-                                <p class="text-xs text-slate-400 font-medium">Certificación Oficial por</p>
-                                <p class="text-sm font-bold text-white">UNC (FCEFyN) y Mundos E</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-2 bg-gradient-to-r from-purple-900/50 to-indigo-900/50 border border-purple-500/30 px-4 py-2.5 rounded-xl">
-                            <i class="fa-solid fa-robot text-brand-orange text-lg"></i>
-                            <span class="text-xs font-bold uppercase tracking-wider text-purple-200">TODO CON IA APLICADA</span>
-                        </div>
-                    </div>
-
-                    <!-- Call To Action Buttons -->
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                        <a href="#inscripcion" class="w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white font-extrabold px-8 py-4 rounded-xl text-base shadow-xl shadow-brand-orange/25 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3">
-                            <i class="fa-solid fa-file-signature text-xl"></i>
-                            <span>Ir al Formulario de Inscripción</span>
-                        </a>
-                        <button onclick="openModal('Inscripción Inmediata')" class="w-full sm:w-auto border border-slate-700 hover:border-slate-500 bg-slate-800/60 text-slate-200 font-semibold px-6 py-4 rounded-xl text-base hover:bg-slate-800 transition-all text-center flex items-center justify-center gap-2">
-                            <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
-                            <span>Consultar Asesor</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Right Hero Feature Card Grid -->
-                <div class="lg:col-span-5">
-                    <div class="glass-card rounded-2xl p-6 sm:p-8 text-slate-900 shadow-2xl relative border-t-4 border-t-brand-orange">
-                        <div class="flex justify-between items-center mb-6 pb-4 border-b border-slate-200">
-                            <div>
-                                <span class="text-xs font-extrabold uppercase tracking-widest text-brand-orange">Modalidad Flexible</span>
-                                <h3 class="text-xl font-extrabold text-slate-900 font-heading">Ficha Técnica</h3>
-                            </div>
-                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase">Online En Vivo</span>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200/80 hover:border-brand-orange/40 transition-colors">
-                                <i class="fa-solid fa-laptop-code text-brand-orange text-xl mb-2"></i>
-                                <p class="text-xs text-slate-500 uppercase font-semibold">Modalidad</p>
-                                <p class="text-sm font-bold text-slate-800">Online + Plataforma</p>
-                            </div>
-                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200/80 hover:border-brand-orange/40 transition-colors">
-                                <i class="fa-solid fa-calendar-days text-brand-purple text-xl mb-2"></i>
-                                <p class="text-xs text-slate-500 uppercase font-semibold">Duración</p>
-                                <p class="text-sm font-bold text-slate-800">5 Meses</p>
-                            </div>
-                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200/80 hover:border-brand-orange/40 transition-colors">
-                                <i class="fa-solid fa-users-rectangle text-emerald-600 text-xl mb-2"></i>
-                                <p class="text-xs text-slate-500 uppercase font-semibold">Encuentros</p>
-                                <p class="text-sm font-bold text-slate-800">20 Encuentros</p>
-                            </div>
-                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200/80 hover:border-brand-orange/40 transition-colors">
-                                <i class="fa-solid fa-clock text-indigo-600 text-xl mb-2"></i>
-                                <p class="text-xs text-slate-500 uppercase font-semibold">Dedicación</p>
-                                <p class="text-sm font-bold text-slate-800">Moderada (2-3h/sem)</p>
-                            </div>
-                        </div>
-
-                        <!-- Requirements Highlight -->
-                        <div class="mt-6 bg-orange-50 border border-orange-200 p-4 rounded-xl text-xs text-slate-700 flex gap-3 items-start">
-                            <i class="fa-solid fa-circle-info text-brand-orange text-base shrink-0 mt-0.5"></i>
-                            <div>
-                                <span class="font-bold text-slate-900 block mb-0.5">Requisitos de Ingreso:</span>
-                                No necesitas conocimientos previos. ¡Todo lo que traigas en tu mochila profesional suma!
-                            </div>
-                        </div>
-
-                        <!-- Project Highlight -->
-                        <div class="mt-3 bg-purple-50 border border-purple-200 p-4 rounded-xl text-xs text-slate-700 flex gap-3 items-start">
-                            <i class="fa-solid fa-diagram-project text-brand-purple text-base shrink-0 mt-0.5"></i>
-                            <div>
-                                <span class="font-bold text-slate-900 block mb-0.5">Proyecto Integrador (PIN):</span>
-                                Desarrollarás una estrategia real para gestionar efectivamente los indicadores de una empresa.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- QUICK METRICS BAR -->
-    <section class="bg-slate-900 border-y border-slate-800 text-white py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div class="space-y-1">
-                    <p class="text-3xl sm:text-4xl font-extrabold text-brand-orange font-heading">+21</p>
-                    <p class="text-xs sm:text-sm text-slate-400 font-medium">Años Transformando Profesionales</p>
-                </div>
-                <div class="space-y-1">
-                    <p class="text-3xl sm:text-4xl font-extrabold text-purple-400 font-heading">+15.000</p>
-                    <p class="text-xs sm:text-sm text-slate-400 font-medium">Alumnos Egresados</p>
-                </div>
-                <div class="space-y-1">
-                    <p class="text-3xl sm:text-4xl font-extrabold text-emerald-400 font-heading">9.5 / 10</p>
-                    <p class="text-xs sm:text-sm text-slate-400 font-medium">Nivel de Satisfacción</p>
-                </div>
-                <div class="space-y-1">
-                    <p class="text-3xl sm:text-4xl font-extrabold text-cyan-400 font-heading">+20.000</p>
-                    <p class="text-xs sm:text-sm text-slate-400 font-medium">Diplomas Entregados</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROGRAM BENEFITS SECTION -->
-    <section id="beneficios" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-                <span class="text-brand-orange font-extrabold uppercase tracking-widest text-xs">Transformación de Gestión</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900">¿Por qué elegir este Micro MBA?</h2>
-                <p class="text-slate-600 text-base">
-                    Adquirí competencias clave y herramientas metodológicas de vanguardia para impulsar tu competitividad ejecutiva y transformar tu organización.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Benefit Card 1 -->
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 hover:shadow-xl hover:-translate-y-1 transition-all group">
-                    <div class="w-14 h-14 rounded-2xl bg-orange-100 text-brand-orange flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-brand-orange group-hover:text-white transition-colors">
-                        <i class="fa-solid fa-chart-line"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3 font-heading">Gestión Estratégica</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Gestioná personas, procesos y proyectos para lograr mejoras tangibles y resultados sostenibles en tu organización.
-                    </p>
-                </div>
-
-                <!-- Benefit Card 2 -->
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 hover:shadow-xl hover:-translate-y-1 transition-all group">
-                    <div class="w-14 h-14 rounded-2xl bg-purple-100 text-brand-purple flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-brand-purple group-hover:text-white transition-colors">
-                        <i class="fa-solid fa-screwdriver-wrench"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3 font-heading">Herramientas Clave</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Adquirí herramientas concretas y metodología ágil (Scrum, Kanban, BSC) para hacer que las cosas sucedan.
-                    </p>
-                </div>
-
-                <!-- Benefit Card 3 -->
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 hover:shadow-xl hover:-translate-y-1 transition-all group">
-                    <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
-                        <i class="fa-solid fa-sliders"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3 font-heading">Mejora Continua</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Medí y optimizá resultados utilizando indicadores de desempeño (KPIs) adecuados para cada área de la empresa.
-                    </p>
-                </div>
-
-                <!-- Benefit Card 4 -->
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 hover:shadow-xl hover:-translate-y-1 transition-all group">
-                    <div class="w-14 h-14 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-                        <i class="fa-solid fa-trophy"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3 font-heading">Calidad y Productividad</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Obtené mejoras reales en procesos e innovación mientras reducís sensiblemente los conflictos de equipo.
-                    </p>
-                </div>
-
-                <!-- Benefit Card 5 -->
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 hover:shadow-xl hover:-translate-y-1 transition-all group">
-                    <div class="w-14 h-14 rounded-2xl bg-cyan-100 text-cyan-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-cyan-600 group-hover:text-white transition-colors">
-                        <i class="fa-solid fa-bullseye"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3 font-heading">Alcanzá tus Metas</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Desarrollá las competencias directivas necesarias para alcanzar un ascenso, encarar nuevos proyectos o hacer crecer tu emprendimiento.
-                    </p>
-                </div>
-
-                <!-- Benefit Card 6 -->
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 hover:shadow-xl hover:-translate-y-1 transition-all group">
-                    <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors">
-                        <i class="fa-solid fa-lightbulb"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3 font-heading">Interiorizá la IA</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Ampliá tu competitividad integrando herramientas de Inteligencia Artificial para la toma de decisiones estratégicas.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROGRAM SYLLABUS SECTION -->
-    <section id="programa" class="py-20 bg-slate-100 dark:bg-slate-900/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-                <div>
-                    <span class="text-brand-orange font-extrabold uppercase tracking-widest text-xs">Plan de Estudios 2026</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white">Programa Académico (20 Encuentros)</h2>
-                    <p class="text-slate-600 dark:text-slate-300 text-base mt-2">
-                        Explorá los 5 módulos diseñados por expertos en gestión empresarial y liderazgo transformacional.
-                    </p>
-                </div>
-                
-                <!-- Search or Filter Bar -->
-                <div class="w-full md:w-72">
-                    <div class="relative">
-                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400"></i>
-                        <input type="text" id="curriculumSearch" onkeyup="filterCurriculum()" placeholder="Buscar tema o palabra clave..." class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 dark:bg-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-brand-orange">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Module Navigation Tabs -->
-            <div class="flex overflow-x-auto space-x-2 pb-4 mb-8 no-scrollbar" id="moduleTabs">
-                <button onclick="switchModule(0)" class="module-tab px-5 py-3 rounded-xl font-bold text-sm whitespace-nowrap bg-brand-orange text-white shadow-md transition-all">
-                    Módulo 1: Contexto & Competencias
-                </button>
-                <button onclick="switchModule(1)" class="module-tab px-5 py-3 rounded-xl font-bold text-sm whitespace-nowrap bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
-                    Módulo 2: Liderazgo & Equipos
-                </button>
-                <button onclick="switchModule(2)" class="module-tab px-5 py-3 rounded-xl font-bold text-sm whitespace-nowrap bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
-                    Módulo 3: Comunicación & Coaching
-                </button>
-                <button onclick="switchModule(3)" class="module-tab px-5 py-3 rounded-xl font-bold text-sm whitespace-nowrap bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
-                    Módulo 4: Costos & Finanzas
-                </button>
-                <button onclick="switchModule(4)" class="module-tab px-5 py-3 rounded-xl font-bold text-sm whitespace-nowrap bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
-                    Módulo 5: Proyecto PIN
-                </button>
-            </div>
-
-            <!-- Module Content Display Container -->
-            <div id="moduleContent" class="space-y-4">
-                <!-- Javascript will dynamically render module contents here -->
-            </div>
-        </div>
-    </section>
-
-    <!-- INTERACTIVE BSC SIMULATOR SECTION -->
-    <section id="simulador" class="py-20 bg-slate-900 text-white relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
-                <span class="text-brand-orange font-extrabold uppercase tracking-widest text-xs">Práctica Interactiva</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold font-heading">Simulador de Tablero de Comando (BSC)</h2>
-                <p class="text-slate-400 text-sm sm:text-base">
-                    En el Módulo 1 y en tu Proyecto Integrador (PIN) aprenderás a calibrar los indicadores estratégicos de tu empresa. Evaluá este simulador de muestra:
-                </p>
-            </div>
-
-            <div class="bg-slate-800/90 border border-slate-700 rounded-2xl p-6 sm:p-8 shadow-2xl max-w-4xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <!-- Sliders Side -->
-                    <div class="space-y-6">
-                        <h4 class="text-lg font-bold text-slate-200 border-b border-slate-700 pb-2 flex items-center justify-between">
-                            <span>Ajustá Variables de Gestión</span>
-                            <i class="fa-solid fa-sliders text-brand-orange"></i>
-                        </h4>
-
-                        <!-- Slider 1 -->
-                        <div>
-                            <div class="flex justify-between text-xs font-semibold mb-2">
-                                <span class="text-slate-300">Alineación de Equipos y Clima (%)</span>
-                                <span id="val-clima" class="text-brand-orange font-bold">75%</span>
-                            </div>
-                            <input type="range" id="slider-clima" min="20" max="100" value="75" oninput="calculateBSC()" class="w-full accent-brand-orange bg-slate-700 rounded-lg h-2 cursor-pointer">
-                        </div>
-
-                        <!-- Slider 2 -->
-                        <div>
-                            <div class="flex justify-between text-xs font-semibold mb-2">
-                                <span class="text-slate-300">Optimización de Procesos con IA (%)</span>
-                                <span id="val-ia" class="text-purple-400 font-bold">60%</span>
-                            </div>
-                            <input type="range" id="slider-ia" min="10" max="100" value="60" oninput="calculateBSC()" class="w-full accent-purple-500 bg-slate-700 rounded-lg h-2 cursor-pointer">
-                        </div>
-
-                        <!-- Slider 3 -->
-                        <div>
-                            <div class="flex justify-between text-xs font-semibold mb-2">
-                                <span class="text-slate-300">Control Finanzas y Margen EBITDA (%)</span>
-                                <span id="val-finanzas" class="text-emerald-400 font-bold">70%</span>
-                            </div>
-                            <input type="range" id="slider-finanzas" min="10" max="100" value="70" oninput="calculateBSC()" class="w-full accent-emerald-500 bg-slate-700 rounded-lg h-2 cursor-pointer">
-                        </div>
-                    </div>
-
-                    <!-- Output Score Indicator -->
-                    <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-700/80 text-center flex flex-col justify-center items-center space-y-4">
-                        <span class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Índice de Salud Empresarial</span>
-                        <div class="relative w-36 h-36 flex items-center justify-center">
-                            <div class="absolute inset-0 rounded-full border-8 border-slate-800"></div>
-                            <div id="bsc-indicator" class="text-4xl font-extrabold font-heading text-emerald-400">82%</div>
-                        </div>
-                        <div id="bsc-status" class="text-sm font-bold px-4 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                            Excelente Desempeño
-                        </div>
-                        <p class="text-xs text-slate-400 leading-relaxed px-2">
-                            Aprenderás a construir tableros reales de Balanced Scorecard aplicados a tu puesto de trabajo.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FACULTY & TEAM SECTION -->
-    <section id="equipo" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-                <span class="text-brand-orange font-extrabold uppercase tracking-widest text-xs">Entrenadores Destacados</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900">Nuestro Equipo Docente</h2>
-                <p class="text-slate-600 text-base">
-                    Nuestros entrenadores son seleccionados a través de un riguroso proceso que evalúa su éxito real en el área ejecutiva en la que transmiten sus conocimientos.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Docente 1 -->
-                <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 flex flex-col justify-between hover:shadow-xl transition-all">
-                    <div>
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-16 h-16 rounded-full bg-slate-300 overflow-hidden flex-shrink-0 border-2 border-brand-orange">
-                                <img src="https://placehold.co/150x150/5B21B6/ffffff?text=ED" alt="Edgardo Donato" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-bold text-slate-900 font-heading">Edgardo Donato</h3>
-                                <p class="text-xs font-semibold text-brand-orange">Fundador y Decano Mundos E</p>
-                            </div>
-                        </div>
-                        <p class="text-xs text-slate-600 leading-relaxed space-y-2">
-                            • Especialista en Desarrollo de Personas, Negocios y Ejecutivos.<br>
-                            • Coach certificado Int. ICC. Especialista en conversaciones transformadoras.<br>
-                            • Lic. en Administración y Contador Público UNC. Master en Entrepreneurship (U. Salamanca).
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-4 border-t border-slate-200/80 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
-                        Módulo: Liderazgo & Estrategia
-                    </div>
-                </div>
-
-                <!-- Docente 2 -->
-                <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 flex flex-col justify-between hover:shadow-xl transition-all">
-                    <div>
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-16 h-16 rounded-full bg-slate-300 overflow-hidden flex-shrink-0 border-2 border-brand-purple">
-                                <img src="https://placehold.co/150x150/FF5722/ffffff?text=PG" alt="Paulo Guillen" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-bold text-slate-900 font-heading">Paulo Guillen</h3>
-                                <p class="text-xs font-semibold text-brand-purple">Socio Gerente Donato & Guillen</p>
-                            </div>
-                        </div>
-                        <p class="text-xs text-slate-600 leading-relaxed space-y-2">
-                            • Profesor en Gestión por Indicadores, Proyectos y Cadena de Abastecimiento.<br>
-                            • Socio Gerente en Optus Plataforma de Compras y Subastas.<br>
-                            • Trayectoria destacada en Holcim, Juan Minetti y Peusso SA.
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-4 border-t border-slate-200/80 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
-                        Módulo: Indicadores & BSC
-                    </div>
-                </div>
-
-                <!-- Docente 3 -->
-                <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 flex flex-col justify-between hover:shadow-xl transition-all">
-                    <div>
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-16 h-16 rounded-full bg-slate-300 overflow-hidden flex-shrink-0 border-2 border-emerald-500">
-                                <img src="https://placehold.co/150x150/10B981/ffffff?text=VU" alt="Victoria Urdiales" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-bold text-slate-900 font-heading">Victoria Urdiales</h3>
-                                <p class="text-xs font-semibold text-emerald-600">Lic. en Psicología & Coach UNC</p>
-                            </div>
-                        </div>
-                        <p class="text-xs text-slate-600 leading-relaxed space-y-2">
-                            • Coach Ontológico Profesional (UNC).<br>
-                            • Posgraduada en Psicología Laboral y Capacitación Corporativa.<br>
-                            • Diplomada en Psicología Positiva Aplicada & Referente Clínica Psi.
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-4 border-t border-slate-200/80 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
-                        Módulo: Autoliderazgo & Inteligencia Emocional
-                    </div>
-                </div>
-
-                <!-- Docente 4 -->
-                <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 flex flex-col justify-between hover:shadow-xl transition-all">
-                    <div>
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-16 h-16 rounded-full bg-slate-300 overflow-hidden flex-shrink-0 border-2 border-indigo-500">
-                                <img src="https://placehold.co/150x150/6366F1/ffffff?text=LA" alt="Luisa María Ahumada" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-bold text-slate-900 font-heading">Luisa María Ahumada</h3>
-                                <p class="text-xs font-semibold text-indigo-600">Especialista en Neuro-Oratoria</p>
-                            </div>
-                        </div>
-                        <p class="text-xs text-slate-600 leading-relaxed space-y-2">
-                            • Asesora de Comunicación Institucional y Escritora.<br>
-                            • Profesora especialista en neuro-oratoria y Storytelling.<br>
-                            • Docente experta en narrativa y presentaciones efectivas de impacto.
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-4 border-t border-slate-200/80 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
-                        Módulo: Comunicación & Presentaciones
-                    </div>
-                </div>
-
-                <!-- Docente 5 -->
-                <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 flex flex-col justify-between hover:shadow-xl transition-all">
-                    <div>
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-16 h-16 rounded-full bg-slate-300 overflow-hidden flex-shrink-0 border-2 border-amber-500">
-                                <img src="https://placehold.co/150x150/F59E0B/ffffff?text=PJ" alt="Pilar Jular" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-bold text-slate-900 font-heading">Pilar Jular</h3>
-                                <p class="text-xs font-semibold text-amber-600">Lic. RRHH & Consultora Sr.</p>
-                            </div>
-                        </div>
-                        <p class="text-xs text-slate-600 leading-relaxed space-y-2">
-                            • +11 años de experiencia en Docencia Universitaria.<br>
-                            • Auditora Normas ISO TS 16949 & Certificación en Gestión Ágil.<br>
-                            • Directora de PJ Desempeño y Consultora en 384 Group.
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-4 border-t border-slate-200/80 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
-                        Módulo: Agilidad & Construcción de Equipos
-                    </div>
-                </div>
-
-                <!-- Docente 6 -->
-                <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 flex flex-col justify-between hover:shadow-xl transition-all">
-                    <div>
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-16 h-16 rounded-full bg-slate-300 overflow-hidden flex-shrink-0 border-2 border-cyan-500">
-                                <img src="https://placehold.co/150x150/06B6D4/ffffff?text=EA" alt="Erica Antinori" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-bold text-slate-900 font-heading">Erica Antinori</h3>
-                                <p class="text-xs font-semibold text-cyan-600">Especialista en Control de Calidad</p>
-                            </div>
-                        </div>
-                        <p class="text-xs text-slate-600 leading-relaxed space-y-2">
-                            • Especialista en Control de Calidad, Estándares y Procedimientos en Holcim Argentina S.A.<br>
-                            • Experta internacional en Gestión de Calidad y Mejora Continua de procesos.
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-4 border-t border-slate-200/80 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
-                        Módulo: Mejora Continua & Calidad
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CORPORATE PARTNERS & UNC ENDORSEMENT SECTION -->
-    <section class="py-20 bg-slate-900 text-white border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Logos Header -->
-            <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
-                <span class="text-brand-orange text-xs font-extrabold uppercase tracking-widest">Ecosistema Empresarial</span>
-                <h3 class="text-2xl sm:text-3xl font-extrabold font-heading">Empresas donde trabajan nuestros alumnos</h3>
-                <p class="text-slate-400 text-xs sm:text-sm">Potenciamos resultados con programas de mejora basados en las personas.</p>
-            </div>
-
-            <!-- Companies Badge Grid -->
-            <div class="flex flex-wrap justify-center items-center gap-4 md:gap-6 opacity-90">
-                <span class="px-5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 font-bold text-sm hover:border-brand-orange transition-colors">Santex</span>
-                <span class="px-5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 font-bold text-sm hover:border-brand-orange transition-colors">Globant</span>
-                <span class="px-5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 font-bold text-sm hover:border-brand-orange transition-colors">Mercado Libre</span>
-                <span class="px-5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 font-bold text-sm hover:border-brand-orange transition-colors">Renault</span>
-                <span class="px-5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 font-bold text-sm hover:border-brand-orange transition-colors">Naranja X</span>
-                <span class="px-5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 font-bold text-sm hover:border-brand-orange transition-colors">Bancor</span>
-                <span class="px-5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 font-bold text-sm hover:border-brand-orange transition-colors">Grupo Libertad</span>
-                <span class="px-5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 font-bold text-sm hover:border-brand-orange transition-colors">Medifé</span>
-                <span class="px-5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 font-bold text-sm hover:border-brand-orange transition-colors">Coca-Cola Andina</span>
-                <span class="px-5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 font-bold text-sm hover:border-brand-orange transition-colors">La Voz</span>
-                <span class="px-5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 font-bold text-sm hover:border-brand-orange transition-colors">Apex</span>
-                <span class="px-5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 font-bold text-sm hover:border-brand-orange transition-colors">Claro</span>
-                <span class="px-5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 font-bold text-sm hover:border-brand-orange transition-colors">Porta</span>
-                <span class="px-5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 font-bold text-sm hover:border-brand-orange transition-colors">Grupo Edisur</span>
-                <span class="px-5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 font-bold text-sm hover:border-brand-orange transition-colors">Sanatorio Allende</span>
-            </div>
-
-            <!-- UNC Institutional Card -->
-            <div class="mt-16 bg-gradient-to-r from-purple-900/60 to-indigo-900/60 border border-purple-500/30 rounded-2xl p-8 max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-                <div class="space-y-3">
-                    <span class="bg-purple-500/20 text-purple-300 text-xs font-bold px-3 py-1 rounded-full border border-purple-500/30">Universidad Nacional de Córdoba</span>
-                    <h4 class="text-2xl font-extrabold font-heading">Una de las más prestigiosas de Latinoamérica</h4>
-                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                        137 mil alumnos en 15 facultades, +250 carreras de grado y posgrado. La Facultad de Ciencias Exactas, Físicas y Naturales (FCEFyN) avala oficialmente este diploma.
-                    </p>
-                </div>
-                <div class="flex-shrink-0 text-center md:text-right border-t md:border-t-0 md:border-l border-purple-500/30 pt-4 md:pt-0 md:pl-8">
-                    <p class="text-3xl font-extrabold text-brand-orange font-heading">Certificado</p>
-                    <p class="text-xs text-slate-300 font-medium">Oficial Universitario</p>
-                    <button onclick="openModal('Ver modelo de Certificado')" class="mt-3 text-xs text-purple-300 underline hover:text-white font-bold">
-                        Ver beneficios de la certificación &rarr;
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- REGISTRATION FORM SECTION -->
-    <section id="inscripcion" class="py-20 bg-slate-100 dark:bg-slate-900 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
-                <span class="bg-brand-orange/10 text-brand-orange border border-brand-orange/20 text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-wider">
-                    Inscripciones Abiertas
-                </span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white">
-                    Formulario Oficial de Inscripción
-                </h2>
-                <p class="text-slate-600 dark:text-slate-300 text-base">
-                    Completá tus datos personales y elegí tu modalidad de pago. Tu solicitud será enviada directamente por WhatsApp al equipo de Admisiones Académicas para formalizar tu vacante.
-                </p>
-            </div>
-
-            <!-- Main Form Wrapper Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start max-w-6xl mx-auto">
-                
-                <!-- Left Column: Pricing Summary & Card Options -->
-                <div class="lg:col-span-5 space-y-6">
-                    <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-xl space-y-6">
-                        <div class="border-b border-slate-100 dark:border-slate-700 pb-4">
-                            <span class="text-xs font-extrabold uppercase text-brand-orange tracking-wider">Inversión y Financiación</span>
-                            <h3 class="text-xl font-extrabold font-heading text-slate-900 dark:text-white mt-1">Opciones Disponibles</h3>
-                        </div>
-
-                        <!-- Payment Plan 1 Card -->
-                        <div class="p-5 rounded-2xl bg-gradient-to-br from-orange-50 to-amber-50/50 border-2 border-brand-orange/40 hover:border-brand-orange transition-all relative overflow-hidden">
-                            <span class="absolute top-0 right-0 bg-brand-orange text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-xl tracking-wider">
-                                BECA 30% OFF + 100% Bonificado
-                            </span>
-                            <div class="flex items-center gap-2 mb-2 pt-2">
-                                <i class="fa-solid fa-bolt-lightning text-brand-orange text-lg"></i>
-                                <span class="text-xs font-extrabold text-slate-800 dark:text-slate-900 uppercase">Opción 1: Pago Único</span>
-                            </div>
-                            <p class="text-2xl font-extrabold text-slate-900 font-heading">$ 675.484.-</p>
-                            <p class="text-xs text-slate-600 mt-1 leading-relaxed">
-                                Transf. bancaria directa. Incluye Beca 30% OFF y matrícula de inscripción 100% bonificada.
-                            </p>
-                        </div>
-
-                        <!-- Payment Plan 2 Card -->
-                        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700 hover:border-purple-500 transition-all">
-                            <div class="flex items-center gap-2 mb-2">
-                                <i class="fa-solid fa-credit-card text-brand-purple text-lg"></i>
-                                <span class="text-xs font-extrabold text-slate-800 dark:text-slate-200 uppercase">Opción 2: Tarjeta de Crédito</span>
-                            </div>
-                            <p class="text-2xl font-extrabold text-slate-900 dark:text-white font-heading">12 cuotas sin interés</p>
-                            <p class="text-lg font-bold text-brand-purple dark:text-purple-400 mt-0.5">$ 91.749.- / cuota</p>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                                Financiación en 12 cuotas fijas sin interés con tarjeta de crédito bancaria.
-                            </p>
-                        </div>
-
-                        <!-- Inquire Other Credit Card Options CTA -->
-                        <div class="p-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800/50 space-y-2">
-                            <div class="flex items-center gap-2 text-emerald-800 dark:text-emerald-300 font-bold text-xs">
-                                <i class="fa-brands fa-whatsapp text-emerald-600 text-lg"></i>
-                                <span>¿Tenés dudas sobre otras tarjetas de crédito?</span>
-                            </div>
-                            <p class="text-xs text-slate-600 dark:text-slate-300">
-                                Consultá con nuestro asesor por promociones bancarias, planes especiales de cuotas o financiación corporativa.
-                            </p>
-                            <a href="https://wa.me/5493516573170?text=Hola%20Jorge,%20quisiera%20consultar%20por%20otras%20opciones%20de%20pago%20con%20tarjeta%20de%20cr%C3%A9dito%20para%20la%20Diplomatura%20en%20Direcci%C3%B3n%20de%20Empresas" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-extrabold text-emerald-700 dark:text-emerald-400 hover:underline pt-1">
-                                <span>Enviar mensaje por consultas de pago</span>
-                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Column: Interactive Enrollment Form -->
-                <div class="lg:col-span-7">
-                    <form id="inscripcionForm" onsubmit="sendInscripcionWhatsApp(event)" class="bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-xl space-y-5">
-                        
-                        <div class="border-b border-slate-100 dark:border-slate-700 pb-3 flex items-center justify-between">
-                            <div>
-                                <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white">Datos del Postulante</h3>
-                                <p class="text-xs text-slate-500 dark:text-slate-400">Ingresá tus datos tal cual figuran en tu documento nacional de identidad.</p>
-                            </div>
-                            <i class="fa-solid fa-user-check text-brand-orange text-2xl"></i>
-                        </div>
-
-                        <!-- Field: Nombre y Apellido -->
-                        <div>
-                            <label for="nombreApellido" class="block text-xs font-extrabold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
-                                Nombre y Apellido <span class="text-rose-500">*</span>
-                            </label>
-                            <div class="relative">
-                                <i class="fa-solid fa-user absolute left-3.5 top-3 text-slate-400 text-sm"></i>
-                                <input type="text" id="nombreApellido" required placeholder="Ej: Juan Carlos Pérez" class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-slate-800 dark:text-white text-sm focus:ring-2 focus:ring-brand-orange focus:outline-none transition-all">
-                            </div>
-                        </div>
-
-                        <!-- Field Grid: Documento & Teléfono -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <!-- Nro. de Documento -->
-                            <div>
-                                <label for="nroDocumento" class="block text-xs font-extrabold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
-                                    Nro. de Documento (DNI/Pasaporte) <span class="text-rose-500">*</span>
-                                </label>
-                                <div class="relative">
-                                    <i class="fa-solid fa-id-card absolute left-3.5 top-3 text-slate-400 text-sm"></i>
-                                    <input type="text" id="nroDocumento" required placeholder="Ej: 32849102" class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-slate-800 dark:text-white text-sm focus:ring-2 focus:ring-brand-orange focus:outline-none transition-all">
-                                </div>
-                            </div>
-
-                            <!-- Teléfono -->
-                            <div>
-                                <label for="telefono" class="block text-xs font-extrabold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
-                                    Teléfono / WhatsApp <span class="text-rose-500">*</span>
-                                </label>
-                                <div class="relative">
-                                    <i class="fa-solid fa-phone absolute left-3.5 top-3 text-slate-400 text-sm"></i>
-                                    <input type="tel" id="telefono" required placeholder="Ej: +54 9 351 1234567" class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-slate-800 dark:text-white text-sm focus:ring-2 focus:ring-brand-orange focus:outline-none transition-all">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Field: Correo Electrónico -->
-                        <div>
-                            <label for="correo" class="block text-xs font-extrabold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
-                                Correo Electrónico <span class="text-rose-500">*</span>
-                            </label>
-                            <div class="relative">
-                                <i class="fa-solid fa-envelope absolute left-3.5 top-3 text-slate-400 text-sm"></i>
-                                <input type="email" id="correo" required placeholder="tuemail@dominio.com" class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-slate-800 dark:text-white text-sm focus:ring-2 focus:ring-brand-orange focus:outline-none transition-all">
-                            </div>
-                        </div>
-
-                        <!-- Field: Opción de Pago Elegida -->
-                        <div>
-                            <label for="opcionPago" class="block text-xs font-extrabold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
-                                Opción de Pago Elegida <span class="text-rose-500">*</span>
-                            </label>
-                            <div class="relative">
-                                <i class="fa-solid fa-wallet absolute left-3.5 top-3 text-slate-400 text-sm z-10"></i>
-                                <select id="opcionPago" required class="w-full pl-10 pr-10 py-3 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-slate-800 dark:text-white text-xs sm:text-sm focus:ring-2 focus:ring-brand-orange focus:outline-none appearance-none cursor-pointer transition-all leading-tight">
-                                    <option value="" disabled selected>Seleccioná tu modalidad de pago...</option>
-                                    <option value="1) Pago único por transferencia de $ 675.484.- (BECA 30%OFF + matrícula 100% bonificada)">
-                                        1) Pago único por transferencia de $ 675.484.- (BECA 30%OFF + matrícula 100% bonificada)
-                                    </option>
-                                    <option value="2) 12 cuotas sin interés de $ 91.749.- con tarjeta de crédito">
-                                        2) 12 cuotas sin interés de $ 91.749.- con tarjeta de crédito
-                                    </option>
-                                </select>
-                                <i class="fa-solid fa-chevron-down absolute right-3.5 top-3.5 text-slate-400 text-xs pointer-events-none"></i>
-                            </div>
-                        </div>
-
-                        <!-- Field: Factura (A, B o C) -->
-                        <div>
-                            <label for="tipoFactura" class="block text-xs font-extrabold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
-                                Tipo de Factura requerida <span class="text-rose-500">*</span>
-                            </label>
-                            <div class="relative">
-                                <i class="fa-solid fa-receipt absolute left-3.5 top-3 text-slate-400 text-sm z-10"></i>
-                                <select id="tipoFactura" onchange="toggleFacturaFields()" required class="w-full pl-10 pr-10 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-slate-800 dark:text-white text-sm focus:ring-2 focus:ring-brand-orange focus:outline-none appearance-none cursor-pointer transition-all">
-                                    <option value="" disabled selected>Seleccioná el tipo de comprobante...</option>
-                                    <option value="Factura Tipo A">Factura Tipo A (Empresa / Responsable Inscripto)</option>
-                                    <option value="Factura Tipo B">Factura Tipo B (Consumidor Final / Exento)</option>
-                                    <option value="Factura Tipo C">Factura Tipo C (Consumidor Final)</option>
-                                </select>
-                                <i class="fa-solid fa-chevron-down absolute right-3.5 top-3.5 text-slate-400 text-xs pointer-events-none"></i>
-                            </div>
-                        </div>
-
-                        <!-- Dynamic Info Box for Factura A -->
-                        <div id="campoFacturaA" class="hidden p-4 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-700 space-y-3 transition-all">
-                            <div class="flex items-center gap-2 text-amber-800 dark:text-amber-300 text-xs font-bold">
-                                <i class="fa-solid fa-building text-amber-600 text-sm"></i>
-                                <span>Información Impositiva requerida para Factura Tipo "A":</span>
-                            </div>
-                            
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                <div>
-                                    <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">CUIT de la Empresa</label>
-                                    <input type="text" id="cuitFacturaA" placeholder="Ej: 30-71123456-8" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-xs text-slate-800 dark:text-white focus:ring-2 focus:ring-brand-orange focus:outline-none">
-                                </div>
-                                <div>
-                                    <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Razón Social</label>
-                                    <input type="text" id="razonSocialFacturaA" placeholder="Ej: Empresa S.A." class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-xs text-slate-800 dark:text-white focus:ring-2 focus:ring-brand-orange focus:outline-none">
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Condición Frente al IVA / Notas Fiscales</label>
-                                <input type="text" id="condicionIvaA" placeholder="Ej: Responsable Inscripto / Domicilio Fiscal" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-900 text-xs text-slate-800 dark:text-white focus:ring-2 focus:ring-brand-orange focus:outline-none">
-                            </div>
-                        </div>
-
-                        <!-- Submit Button -->
-                        <div class="pt-2">
-                            <button type="submit" class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white font-extrabold py-4 px-6 rounded-xl text-base shadow-lg shadow-brand-orange/30 hover:shadow-xl transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-3">
-                                <i class="fa-brands fa-whatsapp text-2xl"></i>
-                                <span>Enviar Inscripción por WhatsApp</span>
-                            </button>
-                            <p class="text-[11px] text-center text-slate-500 dark:text-slate-400 mt-2">
-                                Al hacer clic, se abrirá tu aplicación de WhatsApp con todos los datos precargados para que los envíes directamente a Jorge De Angeli (Admisiones Mundos E / UNC).
-                            </p>
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ SECTION -->
-    <section id="faq" class="py-20 bg-slate-50 dark:bg-slate-900/60">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 space-y-2">
-                <span class="text-brand-orange font-extrabold uppercase tracking-widest text-xs">Resolvé tus dudas</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white">Preguntas Frecuentes</h2>
-            </div>
-
-            <div class="space-y-4" id="faqAccordion">
-                <!-- FAQ Item 1 -->
-                <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
-                    <button onclick="toggleFAQ(1)" class="w-full text-left px-6 py-5 flex justify-between items-center font-bold text-slate-900 dark:text-white hover:text-brand-orange transition-colors">
-                        <span>¿Cómo puedo inscribirme?</span>
-                        <i id="faq-icon-1" class="fa-solid fa-chevron-down text-brand-orange transition-transform"></i>
-                    </button>
-                    <div id="faq-answer-1" class="hidden px-6 pb-5 text-slate-600 dark:text-slate-300 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700/60 pt-3">
-                        Completá el <a href="#inscripcion" class="text-brand-orange font-bold underline">Formulario de Inscripción</a> ubicado arriba o comunicate directamente por WhatsApp. Un Asesor Educativo te confirmará la reserva de tu cupo y los pasos para el pago.
-                    </div>
-                </div>
-
-                <!-- FAQ Item 2 -->
-                <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
-                    <button onclick="toggleFAQ(2)" class="w-full text-left px-6 py-5 flex justify-between items-center font-bold text-slate-900 dark:text-white hover:text-brand-orange transition-colors">
-                        <span>¿Cómo se cursa este programa?</span>
-                        <i id="faq-icon-2" class="fa-solid fa-chevron-down text-brand-orange transition-transform"></i>
-                    </button>
-                    <div id="faq-answer-2" class="hidden px-6 pb-5 text-slate-600 dark:text-slate-300 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700/60 pt-3">
-                        Los encuentros son 100% online y en vivo, con frecuencia semanal (20 encuentros totales). Además tenés acceso 24/7 a la plataforma con materiales y ejercicios extra. Es necesario contar con al menos el 80% de asistencia para recibir el certificado.
-                    </div>
-                </div>
-
-                <!-- FAQ Item 3 -->
-                <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
-                    <button onclick="toggleFAQ(3)" class="w-full text-left px-6 py-5 flex justify-between items-center font-bold text-slate-900 dark:text-white hover:text-brand-orange transition-colors">
-                        <span>¿Quién certifica este programa?</span>
-                        <i id="faq-icon-3" class="fa-solid fa-chevron-down text-brand-orange transition-transform"></i>
-                    </button>
-                    <div id="faq-answer-3" class="hidden px-6 pb-5 text-slate-600 dark:text-slate-300 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700/60 pt-3">
-                        Nuestros programas tienen certificación oficial otorgada conjuntamente por la Facultad de Ciencias Exactas, Físicas y Naturales (FCEFyN) de la Universidad Nacional de Córdoba (UNC, Argentina) y la Escuela de Negocios Mundos E.
-                    </div>
-                </div>
-
-                <!-- FAQ Item 4 -->
-                <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
-                    <button onclick="toggleFAQ(4)" class="w-full text-left px-6 py-5 flex justify-between items-center font-bold text-slate-900 dark:text-white hover:text-brand-orange transition-colors">
-                        <span>¿Cómo y cuándo obtengo mi certificado?</span>
-                        <i id="faq-icon-4" class="fa-solid fa-chevron-down text-brand-orange transition-transform"></i>
-                    </button>
-                    <div id="faq-answer-4" class="hidden px-6 pb-5 text-slate-600 dark:text-slate-300 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700/60 pt-3">
-                        La entrega se realiza en el marco de nuestros actos institucionales de colación, programados tres veces al año (Abril, Julio y Noviembre). Recibirás tu diploma impreso o digital según la fecha de finalización del programa.
-                    </div>
-                </div>
-
-                <!-- FAQ Item 5 -->
-                <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
-                    <button onclick="toggleFAQ(5)" class="w-full text-left px-6 py-5 flex justify-between items-center font-bold text-slate-900 dark:text-white hover:text-brand-orange transition-colors">
-                        <span>¿Qué opciones de pago y financiación existen?</span>
-                        <i id="faq-icon-5" class="fa-solid fa-chevron-down text-brand-orange transition-transform"></i>
-                    </button>
-                    <div id="faq-answer-5" class="hidden px-6 pb-5 text-slate-600 dark:text-slate-300 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-700/60 pt-3">
-                        Contás con opción de pago único por transferencia de $675.484.- con BECA 30%OFF y matrícula 100% bonificada, o bien 12 cuotas sin interés de $91.749.- con tarjeta de crédito. También pods solicitar otras alternativas bancarias.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA FINAL BANNER -->
-    <section class="bg-gradient-to-r from-brand-orange via-orange-600 to-purple-700 text-white py-16 relative">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold font-heading">
-                ¿Listo para transformar tu perfil directivo?
-            </h2>
-            <p class="text-orange-100 text-base sm:text-lg max-w-2xl mx-auto font-light">
-                Sumate a la nueva cohorte de la Diplomatura Universitaria en Dirección de Empresas. Cupos limitados para garantizar una experiencia personalizada.
+    <!-- Header / Hero -->
+    <header class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white py-16 px-4">
+        <div class="max-w-5xl mx-auto text-center space-y-6">
+            <span class="bg-indigo-600/30 text-indigo-300 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-indigo-500/30">
+                Diplomatura Universitaria 100% Online en Vivo
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">Dirección de Empresas</h1>
+            <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto font-light">
+                Aprendé a dominar la gestión integral de negocios y equipos de alto desempeño mediante metodologías ágiles y herramientas financieras clave, desarrollando el autoliderazgo, negociación estratégica y el control por indicadores combinando herramientas de gestión + IA.
             </p>
-            <div class="pt-4 flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#inscripcion" class="bg-slate-900 hover:bg-slate-800 text-white font-extrabold px-8 py-4 rounded-xl text-base shadow-2xl transition-all hover:-translate-y-0.5 inline-flex items-center justify-center gap-3">
-                    <i class="fa-solid fa-file-pen text-brand-orange text-xl"></i>
-                    <span>Completar Formulario de Inscripción</span>
+            <div class="pt-4 flex flex-wrap justify-center gap-4">
+                <a href="#inscripcion" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition">
+                    Inscribirme Ahora
                 </a>
-                <a href="https://wa.me/5493516573170?text=Hola%20Jorge,%20quisiera%20consultar%20por%20la%20Diplomatura%20en%20Direcci%C3%B3n%20de%20Empresas" target="_blank" rel="noopener noreferrer" class="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold px-8 py-4 rounded-xl text-base transition-all inline-flex items-center justify-center gap-3">
-                    <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i>
-                    <span>Contactar a Jorge De Angeli</span>
+                <a href="2026 Diplomatura Universitaria en Dirección de Empresas_MUNDOSE y UNC.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-600 font-semibold px-6 py-3 rounded-lg transition flex items-center gap-2">
+                    <i class="fas fa-file-pdf text-red-400"></i> Descargar Programa
                 </a>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- FOOTER -->
-    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                <div class="space-y-4 md:col-span-2">
-                    <div class="flex items-center gap-2">
-                        <span class="bg-brand-orange text-white font-black px-2.5 py-1 rounded text-base">mundos E</span>
-                        <span class="text-xs font-bold text-slate-300 uppercase">UNC - FCEFyN</span>
-                    </div>
-                    <p class="text-xs text-slate-400 max-w-sm leading-relaxed">
-                        Escuela de Negocios dedicada al potenciamiento de directivos, mandos medios y emprendedores a través de herramientas prácticas y tecnología con IA.
-                    </p>
+    <main class="max-w-6xl mx-auto px-4 py-12 space-y-16 w-full flex-grow">
+
+        <!-- Descripción del Programa -->
+        <section id="programa" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">Sobre la Formación</h2>
+            <p class="text-slate-600 leading-relaxed mb-6">
+                Un programa de última generación dirigido a Gerentes y Mandos Medios que quieren potenciar los resultados de su gestión. Generá equipos más potentes, innová en procesos y alcanzá metas sostenibles utilizando Inteligencia Artificial. Las capacidades que obtendrás te convertirán en el profesional que las empresas de hoy necesitan y disputan.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="p-4 bg-slate-50 rounded-xl">
+                    <i class="fas fa-brain text-2xl text-indigo-600 mb-2"></i>
+                    <p class="text-xs font-semibold text-slate-500">Gestión Estratégica</p>
                 </div>
-                <div>
-                    <h5 class="text-white font-bold mb-3 text-xs uppercase tracking-wider">Enlaces Rápidos</h5>
-                    <ul class="space-y-2 text-xs">
-                        <li><a href="#beneficios" class="hover:text-brand-orange">Beneficios</a></li>
-                        <li><a href="#programa" class="hover:text-brand-orange">Programa Completo</a></li>
-                        <li><a href="#simulador" class="hover:text-brand-orange">Simulador BSC</a></li>
-                        <li><a href="#equipo" class="hover:text-brand-orange">Equipo Docente</a></li>
-                        <li><a href="#inscripcion" class="hover:text-brand-orange">Formulario de Inscripción</a></li>
+                <div class="p-4 bg-slate-50 rounded-xl">
+                    <i class="fas fa-file-excel text-2xl text-emerald-600 mb-2"></i>
+                    <p class="text-xs font-semibold text-slate-500">Herramientas Clave</p>
+                </div>
+                <div class="p-4 bg-slate-50 rounded-xl">
+                    <i class="fas fa-robot text-2xl text-violet-600 mb-2"></i>
+                    <p class="text-xs font-semibold text-slate-500">IA Aplicada</p>
+                </div>
+                <div class="p-4 bg-slate-50 rounded-xl">
+                    <i class="fas fa-project-diagram text-2xl text-amber-600 mb-2"></i>
+                    <p class="text-xs font-semibold text-slate-500">Proyecto Integrador</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detalles del Cursado -->
+        <section id="detalles" class="grid md:grid-cols-2 gap-6">
+            <div class="bg-indigo-900 text-white p-8 rounded-2xl shadow-sm space-y-4">
+                <h3 class="text-xl font-bold text-indigo-200">Detalles de Cursado</h3>
+                <ul class="space-y-3 text-sm">
+                    <li><strong>Edición:</strong> cDE2604ON</li>
+                    <li><strong>Inicio:</strong> 21 de Setiembre de 2026</li>
+                    <li><strong>Horario:</strong> Martes de 19:30 a 21:30 hs. (ARG)</li>
+                    <li><strong>Modalidad:</strong> 100% Online en Vivo</li>
+                    <li><strong>Duración:</strong> 21 encuentros - Finaliza: 15/03/2027</li>
+                </ul>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-center">
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Aval Académico Oficial</h3>
+                <p class="text-slate-600 text-sm mb-4">
+                    Otorgado por la <strong>Universidad Nacional de Córdoba (UNC)</strong> a través de la <strong>Facultad de Ciencias Exactas, Físicas y Naturales (FCEFYN)</strong> en conjunto con <strong>Mundos E</strong>.
+                </p>
+                <a href="2026 Diplomatura Universitaria en Dirección de Empresas_MUNDOSE y UNC.pdf" download class="inline-flex items-center text-sm font-semibold text-indigo-600 hover:text-indigo-800">
+                    <i class="fas fa-download mr-2"></i> Descargar Programa (PDF)
+                </a>
+            </div>
+        </section>
+
+        <!-- Inversión -->
+        <section id="inversion" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6">Valor de la Inversión</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-emerald-50 border border-emerald-200 p-6 rounded-xl">
+                    <span class="text-xs font-bold text-emerald-800 uppercase tracking-wider bg-emerald-200 px-2 py-1 rounded">30% OFF Contado</span>
+                    <h3 class="text-3xl font-extrabold text-emerald-900 mt-3">$675.484-</h3>
+                    <p class="text-xs text-slate-500 mt-1">Valor regular: <span class="line-through">$964.928.-</span></p>
+                    <p class="text-sm text-emerald-700 mt-4 font-medium">Pago único mediante Transferencia Bancaria.</p>
+                </div>
+
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-xl space-y-3">
+                    <h3 class="text-lg font-bold text-slate-900">Opciones Financiadas con Tarjeta de Crédito</h3>
+                    <ul class="space-y-2 text-sm text-slate-700">
+                        <li class="flex justify-between border-b pb-1"><span>3 cuotas fijas de:</span> <strong>$279.186.-</strong></li>
+                        <li class="flex justify-between border-b pb-1"><span>6 cuotas fijas de:</span> <strong>$153.102.-</strong></li>
+                        <li class="flex justify-between"><span>12 cuotas fijas de:</span> <strong>$91.749.-</strong></li>
                     </ul>
                 </div>
+            </div>
+        </section>
+
+        <!-- Formulario de Autogestión de Inscripción -->
+        <section id="inscripcion" class="bg-slate-900 text-white p-8 rounded-2xl shadow-xl">
+            <h2 class="text-2xl font-bold mb-2">Autogestionar Inscripción</h2>
+            <p class="text-slate-400 text-sm mb-6">Completa tus datos para coordinar el pago y confirmar la vacante con tu asesor.</p>
+
+            <form id="enrollmentForm" class="space-y-4 text-slate-800">
+                <div class="grid md:grid-cols-2 gap-4">
+                    <input type="text" id="nombre" placeholder="Nombre y Apellido" required class="p-3 rounded-lg border border-slate-300 w-full text-sm">
+                    <input type="email" id="email" placeholder="Correo Electrónico" required class="p-3 rounded-lg border border-slate-300 w-full text-sm">
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <input type="tel" id="telefono" placeholder="Teléfono de contacto" required class="p-3 rounded-lg border border-slate-300 w-full text-sm">
+                    <select id="pago" required class="p-3 rounded-lg border border-slate-300 w-full text-sm">
+                        <option value="" disabled selected>Selecciona Opción de Pago</option>
+                        <option value="Transferencia Unico Pago ($675.484.-)">Transferencia - Unico Pago ($675.484.-)</option>
+                        <option value="Tarjeta 3 Cuotas Fijas ($279.186.-)">Tarjeta - 3 Cuotas Fijas ($279.186.-)</option>
+                        <option value="Tarjeta 6 Cuotas Fijas ($153.102.-)">Tarjeta - 6 Cuotas Fijas ($153.102.-)</option>
+                        <option value="Tarjeta 12 Cuotas Fijas ($91.749.-)">Tarjeta - 12 Cuotas Fijas ($91.749.-)</option>
+                    </select>
+                </div>
+
                 <div>
-                    <h5 class="text-white font-bold mb-3 text-xs uppercase tracking-wider">Contacto & Admisiones</h5>
-                    <p class="text-xs text-white font-bold">Jorge De Angeli</p>
-                    <p class="text-[11px] text-slate-400">Asesor Educativo y Admisiones Académicas</p>
-                    <p class="text-[11px] text-slate-400">Mundos E | UNC</p>
-                    <div class="mt-2 space-y-1 text-xs">
-                        <a href="https://wa.me/5493516573170" target="_blank" class="block font-semibold text-emerald-400 hover:underline">
-                            <i class="fa-brands fa-whatsapp mr-1"></i> +54 9 351 657-3170
-                        </a>
-                        <a href="https://www.mundose.com" target="_blank" class="block text-brand-orange hover:underline">
-                            <i class="fa-solid fa-globe mr-1"></i> www.mundose.com
-                        </a>
-                        <a href="https://www.linkedin.com/in/jorgedeangeli/" target="_blank" class="block text-sky-400 hover:underline">
-                            <i class="fa-brands fa-linkedin mr-1"></i> Jorge De Angeli en LinkedIn
-                        </a>
-                    </div>
+                    <label class="block text-white text-sm font-semibold mb-2">Tipo de Factura Requerida:</label>
+                    <select id="factura" required class="p-3 rounded-lg border border-slate-300 w-full text-sm">
+                        <option value="Factura B Consumidor Final">Factura B (Consumidor Final)</option>
+                        <option value="Factura A (+21% IVA)">Factura A (+21% IVA)</option>
+                        <option value="Factura C Monotributo">Factura C (Monotributo)</option>
+                    </select>
+                </div>
+
+                <div class="bg-slate-800 p-4 rounded-lg border border-slate-700 text-xs text-slate-300 space-y-1">
+                    <p class="font-semibold text-amber-400"><i class="fas fa-exclamation-triangle mr-1"></i> Aviso sobre Facturación Impositiva:</p>
+                    <p>Los valores listados corresponden a Consumidor Final. En caso de requerir Factura A, se adicionará el 21% de IVA sobre el monto seleccionado.</p>
+                </div>
+
+                <button type="button" onclick="enviarInscripcion()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp text-lg"></i> Enviar Inscripción por WhatsApp
+                </button>
+            </form>
+
+            <div class="mt-4 p-4 bg-slate-800/60 rounded-lg border border-slate-700/50 text-xs text-slate-400">
+                <p><strong>Confirmación de Registro:</strong> Al presionar el botón "Enviar Inscripción por WhatsApp" se abrirá tu aplicación de WhatsApp con la solicitud formateada de reserva para el equipo de mundosE. Recibirás por esa misma vía el link correspondiente para realizar el pago según la opción elegida.</p>
+            </div>
+        </section>
+
+        <!-- Asesor Académico -->
+        <section id="contacto" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col md:flex-row items-center gap-8">
+            <div class="space-y-3 flex-1">
+                <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Atención Personalizada</span>
+                <h3 class="text-2xl font-bold text-slate-900">Jorge De Angeli</h3>
+                <p class="text-sm font-medium text-slate-500">Asesor Académico y de Admisiones Exclusivo<br>MUNDOS E - UNC - FCEFyN</p>
+                <div class="space-y-2 text-sm pt-2">
+                    <p><i class="fas fa-envelope text-indigo-600 w-5"></i> <a href="mailto:jdeangeli@mundose.com" class="hover:underline">jdeangeli@mundose.com</a></p>
+                    <p><i class="fab fa-whatsapp text-emerald-600 w-5"></i> <a href="https://wa.me/5493516573170" target="_blank" class="hover:underline">+54 9 351 657-3170</a></p>
+                    <p><i class="fab fa-linkedin text-blue-600 w-5"></i> <a href="https://www.linkedin.com/in/jorgedeangeli/" target="_blank" class="hover:underline">Perfil de LinkedIn</a></p>
                 </div>
             </div>
-            <div class="border-t border-slate-900 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
-                <p>&copy; 2026 Mundos E & UNC FCEFyN. Todos los derechos reservados.</p>
-                <p class="flex gap-4">
-                    <span>Diplomatura Universitaria con IA</span>
-                </p>
+            <div>
+                <a href="https://wa.me/5493516573170" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">
+                    <i class="fab fa-whatsapp"></i> Consultar al Asesor
+                </a>
             </div>
-        </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-500 text-center py-6 text-xs border-t border-slate-800">
+        <p>© 2026 Mundos E & UNC FCEFyN. Todos los derechos reservados.</p>
+        <p class="mt-1">Contacto exclusivo: Jorge De Angeli - jdeangeli@mundose.com</p>
     </footer>
 
-    <!-- MODAL DE CONSULTA / INSCRIPCIÓN -->
-    <div id="modalConsultar" class="fixed inset-0 z-50 hidden bg-slate-900/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white dark:bg-slate-800 rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative border border-slate-200 dark:border-slate-700">
-            <!-- Close Button -->
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-2 text-xl">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-
-            <!-- Personal Contact Card Header -->
-            <div class="bg-slate-900 text-white p-5 rounded-xl mb-6 border border-slate-800 flex items-center gap-4">
-                <div class="w-14 h-14 rounded-full bg-brand-orange/20 border-2 border-brand-orange flex items-center justify-center text-brand-orange text-2xl font-bold shrink-0">
-                    <i class="fa-solid fa-user-tie"></i>
-                </div>
-                <div>
-                    <h4 class="text-lg font-bold font-heading" id="modalTitle">Jorge De Angeli</h4>
-                    <p class="text-xs text-brand-orange font-medium">Asesor Educativo y Admisiones Académicas</p>
-                    <p class="text-[11px] text-slate-400">Mundos E | Universidad Nacional de Córdoba</p>
-                </div>
-            </div>
-
-            <div class="space-y-3 mb-6">
-                <!-- Direct WhatsApp button -->
-                <a href="https://wa.me/5493516573170?text=Hola%20Jorge,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20Diplomatura%20en%20Direcci%C3%B3n%20de%20Empresas" target="_blank" rel="noopener noreferrer" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-4 rounded-xl text-sm shadow-md transition-all flex items-center justify-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span>Escribir directamente por WhatsApp (+54 9 351 657-3170)</span>
-                </a>
-
-                <!-- LinkedIn and Web Links -->
-                <div class="grid grid-cols-2 gap-2 text-xs">
-                    <a href="https://www.linkedin.com/in/jorgedeangeli/" target="_blank" rel="noopener noreferrer" class="bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 text-slate-700 dark:text-slate-200 font-semibold p-2.5 rounded-lg text-center flex items-center justify-center gap-2">
-                        <i class="fa-brands fa-linkedin text-sky-600 text-base"></i>
-                        <span>Perfil LinkedIn</span>
-                    </a>
-                    <a href="https://www.mundose.com" target="_blank" rel="noopener noreferrer" class="bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 text-slate-700 dark:text-slate-200 font-semibold p-2.5 rounded-lg text-center flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-globe text-brand-orange text-base"></i>
-                        <span>www.mundose.com</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="text-center">
-                <a href="#inscripcion" onclick="closeModal()" class="inline-block bg-brand-orange hover:bg-brand-orangeHover text-white font-bold px-6 py-2.5 rounded-xl text-xs shadow-md transition-all">
-                    Ir al Formulario de Inscripción en la página &rarr;
-                </a>
-            </div>
-        </div>
-    </div>
-
     <script>
-        // Toggle dynamic fields for Factura Tipo A
-        function toggleFacturaFields() {
-            const tipo = document.getElementById('tipoFactura').value;
-            const campoA = document.getElementById('campoFacturaA');
-            if (tipo === 'Factura Tipo A') {
-                campoA.classList.remove('hidden');
-            } else {
-                campoA.classList.add('hidden');
-            }
-        }
+        function enviarInscripcion() {
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const telefono = document.getElementById('telefono').value;
+            const pago = document.getElementById('pago').value;
+            const factura = document.getElementById('factura').value;
 
-        // Handle sending registration data via WhatsApp
-        function sendInscripcionWhatsApp(event) {
-            event.preventDefault();
-
-            const nombre = document.getElementById('nombreApellido').value.trim();
-            const dni = document.getElementById('nroDocumento').value.trim();
-            const telefono = document.getElementById('telefono').value.trim();
-            const correo = document.getElementById('correo').value.trim();
-            const pago = document.getElementById('opcionPago').value;
-            const factura = document.getElementById('tipoFactura').value;
-
-            let mensajeFacturaInfo = `• Factura requerida: ${factura}`;
-
-            if (factura === 'Factura Tipo A') {
-                const cuit = document.getElementById('cuitFacturaA').value.trim();
-                const razonSocial = document.getElementById('razonSocialFacturaA').value.trim();
-                const condicionIva = document.getElementById('condicionIvaA').value.trim();
-
-                mensajeFacturaInfo += `\n  - CUIT: ${cuit || 'No especificado'}`;
-                mensajeFacturaInfo += `\n  - Razón Social: ${razonSocial || 'No especificada'}`;
-                mensajeFacturaInfo += `\n  - Condición IVA / Fiscal: ${condicionIva || 'No especificada'}`;
-            }
-
-            // Build structured text for WhatsApp
-            const textoMensaje = `Quiero inscribirme en la Diplomatura Universitaria en Dirección de Empresas
-
-📌 *DATOS DEL INSCRIPTO:*
-• Nombre y Apellido: ${nombre}
-• Nro. de Documento: ${dni}
-• Teléfono: ${telefono}
-• Correo Electrónico: ${correo}
-
-💳 *OPCIÓN DE PAGO ELEGIDA:*
-• ${pago}
-
-🧾 *FACTURACIÓN:*
-${mensajeFacturaInfo}`;
-
-            // Encode string for WhatsApp web/app URL
-            const whatsappUrl = `https://wa.me/5493516573170?text=${encodeURIComponent(textoMensaje)}`;
-
-            // Open WhatsApp in new tab
-            window.open(whatsappUrl, '_blank');
-        }
-
-        // Data Structure for Modules & Encounters
-        const modulesData = [
-            {
-                title: "MÓDULO 1: Contexto y Competencias del Líder de Empresas",
-                subtitle: "Encuentros 1 al 7",
-                encounters: [
-                    {
-                        num: "Encuentro 1",
-                        title: "Contexto, Rol Estratégico del Líder y Gestión del Cambio",
-                        topics: [
-                            "Contexto y rol estratégico. Valores de Mundos E",
-                            "Contexto Blended Management & Esquema de herramientas 'hard' y 'soft'",
-                            "Mejora de Procesos y Relaciones Humanas en las Organizaciones",
-                            "Desarrollo de la competencia 'Aprender a aprender'",
-                            "Dimensiones de la gestión de equipos remotos: tiempo, espacio, vínculos y acciones"
-                        ]
-                    },
-                    {
-                        num: "Encuentro 2",
-                        title: "Modelado de Negocios",
-                        topics: [
-                            "¿Para qué modelar un negocio?",
-                            "Metodología Canvas BMG",
-                            "Aplicaciones prácticas y uso en el Proyecto Integrador (PIN)"
-                        ]
-                    },
-                    {
-                        num: "Encuentro 3",
-                        title: "Mindset Ágil",
-                        topics: [
-                            "Gestión ágil e innovación en negocios",
-                            "Metodología KANBAN para flujo de valor",
-                            "SCRUM: Valores, Roles, Ceremonias, Artefactos, Product Owner, Equipo y Backlog"
-                        ]
-                    },
-                    {
-                        num: "Encuentro 4",
-                        title: "Modelado de Negocios Circulares",
-                        topics: [
-                            "Desarrollo sostenible, riesgos y oportunidades",
-                            "Desafíos y habilidades del líder sustentable",
-                            "Indicadores ambientales y de circularidad (Economía lineal vs. Circular)"
-                        ]
-                    },
-                    {
-                        num: "Encuentros 5 y 6",
-                        title: "Resultados Blended Management. Gestión por Indicadores",
-                        topics: [
-                            "Modelo de gestión por indicadores y sus ventajas",
-                            "Planificación estratégica, administración y gestión de riesgos",
-                            "Diagnóstico Organizacional, Mapa Estratégico y Balanced Score Card (BSC)"
-                        ]
-                    },
-                    {
-                        num: "Encuentro 7",
-                        title: "Mentoría PIN (Proyecto Integrador de Negocios)",
-                        topics: [
-                            "Avanzar con el desarrollo del PIN con acompañamiento de entrenadores",
-                            "Repaso de consigna PIN y análisis de casos/ejemplos"
-                        ]
-                    }
-                ]
-            },
-            {
-                title: "MÓDULO 2: Liderazgo y Construcción de Equipos",
-                subtitle: "Encuentros 8 al 14",
-                encounters: [
-                    {
-                        num: "Encuentro 8",
-                        title: "Liderarse para Liderar. Autoliderazgo",
-                        topics: [
-                            "Liderar - Liderarme: Inteligencia emocional y gestión de emociones básicas",
-                            "Liderazgo situacional y recursos para la gestión emocional",
-                            "Disrupciones cognitivas en la toma de decisiones"
-                        ]
-                    },
-                    {
-                        num: "Encuentro 9",
-                        title: "Liderarse para Liderar. Inteligencia Emocional",
-                        topics: [
-                            "La empatía como base del liderazgo",
-                            "Relaciones interpersonales desde el enfoque de Daniel Goleman",
-                            "Tipos de liderazgo y su impacto situacional"
-                        ]
-                    },
-                    {
-                        num: "Encuentro 10",
-                        title: "Liderazgo de Equipos",
-                        topics: [
-                            "Modelos de liderazgo situacional y estilos",
-                            "Enfoques de habilidades directivas",
-                            "Desarrollo de equipos: Las 5 C del trabajo en equipo"
-                        ]
-                    },
-                    {
-                        num: "Encuentro 11",
-                        title: "Construcción de Equipos I. Reglas, Roles y Conformación",
-                        topics: [
-                            "Reglas, roles, valores y objetivos",
-                            "Características de equipos ágiles vs. grupos",
-                            "Fases de desarrollo de un equipo (Modelo de Tuckman)"
-                        ]
-                    },
-                    {
-                        num: "Encuentro 12",
-                        title: "Construcción de Equipos II. Dinámicas Participativas",
-                        topics: [
-                            "Individuos competentes, propósito y gestión del cambio",
-                            "Facilitación dinámica de grupos",
-                            "Herramientas para generar inteligencia colectiva de alto impacto"
-                        ]
-                    },
-                    {
-                        num: "Encuentros 13 y 14",
-                        title: "Negociación y Gestión de Relaciones, Conversaciones Difíciles",
-                        topics: [
-                            "Negociación: Método Harvard",
-                            "Conversaciones difíciles y tipos de personalidad",
-                            "Modelos mentales, PNL y el Círculo de Valor en 4 etapas"
-                        ]
-                    }
-                ]
-            },
-            {
-                title: "MÓDULO 3: Comunicación y Coaching",
-                subtitle: "Encuentros 15 al 16",
-                encounters: [
-                    {
-                        num: "Encuentro 15",
-                        title: "Comunicación y Coaching I. Conversaciones Efectivas",
-                        topics: [
-                            "Conversaciones, afirmaciones y juicios",
-                            "Ciclo de coordinación de acciones en equipos remotos",
-                            "El Efecto Pigmalión en el rendimiento de equipos"
-                        ]
-                    },
-                    {
-                        num: "Encuentro 16",
-                        title: "Comunicación y Coaching II. Matriz de Resultados",
-                        topics: [
-                            "Matriz para la toma de decisiones y el Modelo GROW",
-                            "Prioridades con la Caja de Eisenhower",
-                            "Diseño de conversaciones y Matriz de Resultados y Relaciones"
-                        ]
-                    }
-                ]
-            },
-            {
-                title: "MÓDULO 4: Costos y Finanzas",
-                subtitle: "Encuentros 17 al 18",
-                encounters: [
-                    {
-                        num: "Encuentro 17",
-                        title: "Costos y Finanzas I. Paradigmas de Gestión",
-                        topics: [
-                            "Cambio de paradigmas en la gestión financiera",
-                            "Clasificación de costos y punto de equilibrio",
-                            "Criterios de costeo aplicados"
-                        ]
-                    },
-                    {
-                        num: "Encuentro 18",
-                        title: "Costos y Finanzas II. Evaluación Financiera",
-                        topics: [
-                            "Finanzas básicas aplicadas: VAN y TIR",
-                            "Proyecciones financieras ejecutivas",
-                            "Tablero de comando financiero"
-                        ]
-                    }
-                ]
-            },
-            {
-                title: "MÓDULO 5: PIN (Proyecto Integrador de Negocios)",
-                subtitle: "Encuentros 19 al 20",
-                encounters: [
-                    {
-                        num: "Encuentro 19",
-                        title: "Presentaciones Efectivas & Coacheo de PINES",
-                        topics: [
-                            "Paradigmas y construcción de confianza",
-                            "Integración de cuerpo, lenguaje y emoción (Neuro-oratoria)",
-                            "Aplicación práctica orientada al Proyecto Integrador"
-                        ]
-                    },
-                    {
-                        num: "Encuentro 20",
-                        title: "Presentación Final de PINES",
-                        topics: [
-                            "Exposición y defensa del Proyecto Integrador de Negocios ante el tribunal de docentes y directivos"
-                        ]
-                    }
-                ]
-            }
-        ];
-
-        let activeModuleIndex = 0;
-
-        // Render Active Module Content
-        function switchModule(index) {
-            activeModuleIndex = index;
-            
-            // Update Tab styles
-            const tabs = document.querySelectorAll('.module-tab');
-            tabs.forEach((tab, i) => {
-                if (i === index) {
-                    tab.className = "module-tab px-5 py-3 rounded-xl font-bold text-sm whitespace-nowrap bg-brand-orange text-white shadow-md transition-all";
-                } else {
-                    tab.className = "module-tab px-5 py-3 rounded-xl font-bold text-sm whitespace-nowrap bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all";
-                }
-            });
-
-            renderModuleDetails();
-        }
-
-        function renderModuleDetails() {
-            const mod = modulesData[activeModuleIndex];
-            const container = document.getElementById('moduleContent');
-            
-            let html = `
-                <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-sm mb-6">
-                    <div class="flex flex-col sm:flex-row justify-between sm:items-center border-b border-slate-200 dark:border-slate-700 pb-4 mb-6 gap-2">
-                        <div>
-                            <span class="text-xs font-bold text-brand-orange uppercase">${mod.subtitle}</span>
-                            <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white font-heading">${mod.title}</h3>
-                        </div>
-                        <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 font-bold px-3 py-1 rounded-full w-fit">
-                            ${mod.encounters.length} Encuentro(s)
-                        </span>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            `;
-
-            mod.encounters.forEach(enc => {
-                html += `
-                    <div class="bg-slate-50 dark:bg-slate-900/60 rounded-xl p-5 border border-slate-200/80 dark:border-slate-700/80 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="bg-brand-orange/10 text-brand-orange text-xs font-extrabold px-2.5 py-1 rounded-md">
-                                    ${enc.num}
-                                </span>
-                            </div>
-                            <h4 class="font-bold text-slate-900 dark:text-white text-base mb-3 font-heading">${enc.title}</h4>
-                            <ul class="space-y-1.5 text-xs text-slate-600 dark:text-slate-300">
-                                ${enc.topics.map(t => `<li class="flex items-start gap-2"><i class="fa-solid fa-angle-right text-brand-orange mt-0.5 text-[10px]"></i><span>${t}</span></li>`).join('')}
-                            </ul>
-                        </div>
-                    </div>
-                `;
-            });
-
-            html += `
-                    </div>
-                </div>
-            `;
-
-            container.innerHTML = html;
-        }
-
-        // Search Filter Logic across modules
-        function filterCurriculum() {
-            const query = document.getElementById('curriculumSearch').value.toLowerCase().trim();
-            if (!query) {
-                renderModuleDetails();
+            if(!nombre || !email || !telefono || !pago) {
+                alert('Por favor, completa todos los campos del formulario.');
                 return;
             }
 
-            const container = document.getElementById('moduleContent');
-            let results = [];
+            const mensaje = `Quiero inscribirme a la Diplomatura Universitaria en Dirección de Empresas%0A%0A` +
+                `*Datos de Referencia del Cursado:*%0A` +
+                `- Edición: cDE2604ON%0A` +
+                `- Inicio: 21 de Setiembre de 2026%0A` +
+                `- Horario: Martes de 19:30 a 21:30 hs. (ARG)%0A` +
+                `- Aval Académico Oficial: Universidad Nacional de Córdoba (UNC) - Facultad de Ciencias Exactas, Físicas y Naturales (FCEFYN)%0A` +
+                `- Duración: 21 encuentros - Finaliza el 15/03/2027%0A%0A` +
+                `*Mis Datos:*%0A` +
+                `- Nombre y Apellido: ${encodeURIComponent(nombre)}%0A` +
+                `- Correo Electrónico: ${encodeURIComponent(email)}%0A` +
+                `- Teléfono: ${encodeURIComponent(telefono)}%0A%0A` +
+                `*Selección de Pago y Facturación:*%0A` +
+                `- Opción de Pago Elegida: ${encodeURIComponent(pago)}%0A` +
+                `- Tipo de Factura Requerida: ${encodeURIComponent(factura)}%0A%0A` +
+                `Quedo a la espera del enlace para realizar el pago correspondiente. ¡Muchas gracias!`;
 
-            modulesData.forEach((mod) => {
-                mod.encounters.forEach(enc => {
-                    const matchTitle = enc.title.toLowerCase().includes(query);
-                    const matchTopics = enc.topics.some(t => t.toLowerCase().includes(query));
-                    if (matchTitle || matchTopics) {
-                        results.push({ modTitle: mod.title, encounter: enc });
-                    }
-                });
-            });
-
-            if (results.length === 0) {
-                container.innerHTML = `
-                    <div class="bg-white dark:bg-slate-800 rounded-2xl p-8 text-center text-slate-500 border border-slate-200 dark:border-slate-700">
-                        <i class="fa-solid fa-magnifying-glass text-3xl mb-3 text-slate-400"></i>
-                        <p class="font-bold text-slate-700 dark:text-slate-300">No se encontraron temas coincidentes.</p>
-                        <p class="text-xs text-slate-400 mt-1">Intentá buscar palabras como "Scrum", "BSC", "PNL", "Finanzas" o "Liderazgo".</p>
-                    </div>
-                `;
-                return;
-            }
-
-            let html = `<div class="space-y-4">`;
-            results.forEach(res => {
-                html += `
-                    <div class="bg-white dark:bg-slate-800 rounded-xl p-5 border border-slate-200 dark:border-slate-700 shadow-sm">
-                        <span class="text-[10px] uppercase font-bold text-slate-400">${res.modTitle}</span>
-                        <div class="flex items-center gap-2 my-1">
-                            <span class="bg-brand-orange text-white text-xs font-bold px-2 py-0.5 rounded">${res.encounter.num}</span>
-                            <h4 class="font-bold text-slate-900 dark:text-white">${res.encounter.title}</h4>
-                        </div>
-                        <ul class="mt-2 space-y-1 text-xs text-slate-600 dark:text-slate-300">
-                            ${res.encounter.topics.map(t => `<li class="flex items-start gap-1.5"><i class="fa-solid fa-check text-emerald-500 mt-0.5 text-[10px]"></i><span>${t}</span></li>`).join('')}
-                        </ul>
-                    </div>
-                `;
-            });
-            html += `</div>`;
-            container.innerHTML = html;
+            window.open(`https://wa.me/5493516573170?text=${mensaje}`, '_blank');
         }
-
-        // BSC Interactive Simulator Logic
-        function calculateBSC() {
-            const clima = parseInt(document.getElementById('slider-clima').value);
-            const ia = parseInt(document.getElementById('slider-ia').value);
-            const finanzas = parseInt(document.getElementById('slider-finanzas').value);
-
-            document.getElementById('val-clima').innerText = clima + '%';
-            document.getElementById('val-ia').innerText = ia + '%';
-            document.getElementById('val-finanzas').innerText = finanzas + '%';
-
-            // Weighted index
-            const score = Math.round((clima * 0.35) + (ia * 0.30) + (finanzas * 0.35));
-            const indicatorEl = document.getElementById('bsc-indicator');
-            const statusEl = document.getElementById('bsc-status');
-
-            indicatorEl.innerText = score + '%';
-
-            if (score >= 80) {
-                indicatorEl.className = "text-4xl font-extrabold font-heading text-emerald-400";
-                statusEl.innerText = "Excelente Desempeño Directivo";
-                statusEl.className = "text-sm font-bold px-4 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30";
-            } else if (score >= 60) {
-                indicatorEl.className = "text-4xl font-extrabold font-heading text-amber-400";
-                statusEl.innerText = "Desempeño Aceptable con Oportunidades";
-                statusEl.className = "text-sm font-bold px-4 py-1.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30";
-            } else {
-                indicatorEl.className = "text-4xl font-extrabold font-heading text-rose-400";
-                statusEl.innerText = "Requiere Reestructuración de Procesos";
-                statusEl.className = "text-sm font-bold px-4 py-1.5 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/30";
-            }
-        }
-
-        // Toggle Accordion FAQ
-        function toggleFAQ(num) {
-            const ans = document.getElementById(`faq-answer-${num}`);
-            const icon = document.getElementById(`faq-icon-${num}`);
-            if (ans.classList.contains('hidden')) {
-                ans.classList.remove('hidden');
-                icon.style.transform = 'rotate(180deg)';
-            } else {
-                ans.classList.add('hidden');
-                icon.style.transform = 'rotate(0deg)';
-            }
-        }
-
-        // Modal Handler
-        function openModal(origin) {
-            const modal = document.getElementById('modalConsultar');
-            const title = document.getElementById('modalTitle');
-            if (origin) {
-                title.innerText = `Jorge De Angeli (${origin})`;
-            }
-            modal.classList.remove('hidden');
-        }
-
-        function closeModal() {
-            document.getElementById('modalConsultar').classList.add('hidden');
-        }
-
-        // Mobile Menu Toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-
-        document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
-
-        // Initial setup on load
-        window.onload = function() {
-            renderModuleDetails();
-            calculateBSC();
-        };
     </script>
 </body>
 </html>
